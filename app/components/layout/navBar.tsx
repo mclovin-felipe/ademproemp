@@ -46,7 +46,7 @@ const NavBar = () => {
           </Button>
         </div>
       </div>
-      <div className="text-white px-8 font-semibold h-20 bg-primary w-5/6 mx-auto rounded-2xl flex items-center justify-between transform skew-x-[-10deg]">
+      <div className="text-white px-8 font-semibold h-20 bg-primary w-5/6 mx-auto rounded-2xl flex items-center justify-between transform skew-x-[-10deg] -mb-10">
         <div className="skew-x-[10deg]">Hola</div>
         <div className="skew-x-[10deg]">Hola</div>
         <div className="skew-x-[10deg]">Hola</div>
