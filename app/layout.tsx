@@ -2,7 +2,7 @@ import "@/app/globals.css";
 import { Inter as FontSans } from "next/font/google";
 
 import { cn } from "@/lib/utils";
-import { NavBar } from "./components";
+import { Footer, NavBar } from "./components";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -25,6 +25,8 @@ export default function RootLayout({
       >
         <NavBar />
         {children}
+        <div className="h-44"></div>
+        <Footer />
       </body>
     </html>
   );
