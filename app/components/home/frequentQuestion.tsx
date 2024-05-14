@@ -7,7 +7,7 @@ const FrequentQuestion = () => {
   const [show, setShow] = useState(false);
   return (
     <div
-      className={`flex flex-col transition-all w-4/6 px-5 py-3 rounded-2xl ${
+      className={`flex flex-col transition-all lg:w-5/6 px-5 py-3 rounded-2xl ${
         show ? "border" : "border-none"
       }`}
     >

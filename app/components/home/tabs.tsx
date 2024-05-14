@@ -3,8 +3,22 @@ import { useState } from "react";
 import Tab from "./tab";
 import { CursosProps, DatosProps } from "@/types/cursos";
 import CardCurso from "../global/cardCurso";
+import Carousel from "@/components/Carousel/EmblaCarousel";
 const Tabs = () => {
   const [active, setActive] = useState(0);
+
+  const Cards = () => {
+    if (active === 0) {
+      return datos.map((item, index) =>
+        item.cursos.map((curso, index) => (
+          <CardCurso key={index} item={curso} home={true} />
+        ))
+      );
+    }
+    return datos[active - 1]?.cursos.map((item: CursosProps, index) => (
+      <CardCurso key={index} item={item} home={true} />
+    ));
+  };
   return (
     <div className="w-5/6 mx-auto">
       <div className=" mx-auto max-w-lg text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700">
@@ -26,10 +40,8 @@ const Tabs = () => {
           ))}
         </ul>
       </div>
-      <div className="flex flex-wrap mt-14 gap-14 justify-center">
-        {datos[active - 1]?.cursos.map((item: CursosProps, index) => (
-          <CardCurso key={index} item={item} home={true} />
-        ))}
+      <div>
+        <Carousel slides={Cards()} />
       </div>
     </div>
   );

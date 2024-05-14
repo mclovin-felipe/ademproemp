@@ -12,9 +12,12 @@ import {
   PhoneCall,
   ForwardIcon,
 } from "lucide-react";
+import Menu from "./menu";
+import { routes } from "@/app/routes/routes";
+import { Route } from "@/types/routes";
 const NavBar = () => {
   return (
-    <nav className="w-full">
+    <nav className="hidden w-full  lg:flex flex-col">
       <div className="bg-primary px-[14%] h-12 flex flex-row justify-end items-center">
         <User color={"white"} /> <Button>Ingresar/Registrar</Button>
       </div>
@@ -47,12 +50,15 @@ const NavBar = () => {
         </div>
       </div>
       <div className="text-white px-8 font-semibold h-20 bg-primary w-5/6 mx-auto rounded-2xl flex items-center justify-between transform skew-x-[-10deg] -mb-10">
-        <div className="skew-x-[10deg]">Hola</div>
-        <div className="skew-x-[10deg]">Hola</div>
-        <div className="skew-x-[10deg]">Hola</div>
-        <div className="skew-x-[10deg]">Hola</div>
-        <div className="skew-x-[10deg]">Hola</div>
-        <div className="skew-x-[10deg]">Hola</div>
+        {routes.map((item: Route) => (
+          <Menu
+            titulo={item.title}
+            subMenu={item?.subRoutes || []}
+            key={item.title}
+            href={item.path}
+          />
+        ))}
+
         <div className="skew-x-[10deg] flex flex-row gap-x-3">
           <Button className="w-10 h-8 p-0" variant={"secondary"}>
             <FacebookIcon />

@@ -1,15 +1,17 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { ForwardIcon, Quote } from "lucide-react";
-import Tabs from "./components/home/tabs";
-import FrequentQuestion from "./components/home/frequentQuestion";
+import { FrequentQuestion, Card, Cursos, Profesores, Tabs } from "./components";
+import ImagePrueba from "./components/layout/Image";
+import EmblaCarousel from "@/components/Carousel/EmblaCarousel";
+import Feature from "./components/home/Feature";
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between ">
-      <div className="bg-gradient-to-r from-[#193632] flex justify-center items-center  via-[#1E1F22]  to-[#0E192B] py-44 w-full">
+    <main className="  flex min-h-screen flex-col items-center justify-between ">
+      <div className="bg-gradient-to-r from-[#193632] flex justify-center items-center  via-[#1E1F22]  to-[#0E192B] py-14 lg:py-44">
         <div className="ml-[8.7%] mx-auto flex w-2/5 flex-col gap-y-5 justify-center items-start h-full">
           <h1 className="text-primary text-md">Aprende hoy</h1>
-          <h1 className="text-6xl font-semibold text-white ">
+          <h1 className=" text-2xl lg:text-6xl font-semibold text-white ">
             Aula Global: Conectando Conocimientos Expandiendo Horizonte
           </h1>
           <p className="text-gray-300 text-xl ">
@@ -21,7 +23,7 @@ export default function Home() {
             <ForwardIcon />{" "}
           </Button>
         </div>
-        <div className="w-3/5 h-full  relative flex justify-center items-center">
+        <div className="hidden w-3/5 h-full  relative lg:flex justify-center items-center">
           <div className="absolute h-full w-1/2 mx-auto bg-blue-100/30 z-20 blur-3xl rounded-full"></div>
           <Image
             src={"/profesor.png"}
@@ -33,34 +35,11 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className="flex flex-col justify-start items-center pb-24">
-        <div className="absolute h-1/2 bg-gray-50 w-full shadow-md -z-40 "></div>
-        <div className="z-10 mt-24 flex flex-col items-center gap-y-10">
-          <h1 className="text-4xl">Por qué elegirnos?</h1>
-          <p className="w-1/2 text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla vero
-            soluta natus vel delectus molestias alias.
-          </p>
-          <div className="flex flex-row gap-x-14">
-            {[...Array(3)].map((_, i) => (
-              <div className="w-96 h-[30rem] bg-white z-40 rounded-2xl drop-shadow-xl border-b flex justify-between items-center flex-col">
-                <div className="h-3/5 w-full bg-red-200 rounded-t-2xl"></div>
-                <div className="h-2/5 w-full flex flex-col justify-between py-5 px-10">
-                  <h4 className="text-sm">Feature-01</h4>
-                  <h1 className="text-2xl font-bold">
-                    Highly Expert Team Member line
-                  </h1>
-                  <Button variant={"ghost"}>Leer más</Button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+      <Feature />
       {/* Seccion3  */}
-      <div className="grid grid-cols-2 mb-14">
+      <div className="grid lg:grid-cols-2 mb-14 px-5 lg:px-0">
         <div></div>
-        <div className="flex flex-col gap-y-14">
+        <div className="  flex items-center lg:items-start flex-col gap-y-14">
           <Button variant={"secondary"} className="rounded-full shadow-lg w-36">
             Sobre Nosotros
           </Button>
@@ -69,7 +48,9 @@ export default function Home() {
           </h1>
           {[...Array(2)].map((item) => (
             <div className="flex flex-row gap-x-5  items-center">
-              <div className="h-24 w-24 bg-black rounded-2xl"></div>
+              <div className="h-24 w-24  rounded-2xl">
+                <ImagePrueba />
+              </div>
               <div className="flex flex-col">
                 <h1 className="text-xl font-bold">1985</h1>
                 <h2 className="text-lg ">Texto prueba</h2>
@@ -84,14 +65,9 @@ export default function Home() {
         </div>
       </div>
       {/* Seccion 4 */}
-      <div className="bg-gradient-to-r from-[#0E192B] flex justify-center items-center  via-[#1E1F22]  to-[#193632] py-14 w-full flex-col gap-y-14">
-        <Button variant={"secondary"} className="rounded-full shadow-lg w-36">
-          Nuestros cursos
-        </Button>
-        <h1 className="text-white text-4xl">Nustros mejores cursos</h1>
-        <Tabs />
-      </div>
-      <div className=" flex justify-center items-center  py-14 w-full flex-col ">
+      <Cursos />
+
+      <div className=" px-5 lg:px-0 flex justify-center items-center  py-14 w-full flex-col ">
         <Button variant={"secondary"} className="rounded-full shadow-lg w-36">
           Como funciona
         </Button>
@@ -116,14 +92,16 @@ export default function Home() {
           </Button>
         </div>
       </div>
-      <div className="grid grid-cols-2 min-h-[50vh]">
-        <div></div>
+      <div className=" gap-x-5 grid lg:grid-cols-2 w-5/6 min-h-[50vh]" id="FAQ">
+        <div className="py-14">
+          <ImagePrueba />
+        </div>
         <div className=" py-14 flex flex-col gap-y-8">
           <Button variant={"secondary"} className="rounded-full shadow-lg w-36">
             Por que elegirnos
           </Button>
           <h1 className="text-4xl font-bold">Preguntas frecuentes</h1>
-          <p className="text-gray-600 w-4/6">
+          <p className="text-gray-600 lg:w-5/6">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius dolor
             pariatur numquam! Nesciunt voluptate assumenda, modi magni accusamus
             adipisci! Exercitationem nihil mollitia dicta non sit adipisci
@@ -134,40 +112,12 @@ export default function Home() {
           <FrequentQuestion />
         </div>
       </div>
-      <div className="bg-gradient-to-r from-[#0E192B] flex justify-center items-center  via-[#1E1F22]  to-[#193632] py-14 w-full flex-col gap-y-14 px-[14%]">
-        <Button
-          variant={"secondary"}
-          className="rounded-full shadow-lg w-36 self-start"
-        >
-          Nuestros cursos
-        </Button>
-        <h1 className="text-white text-4xl self-start">Nustros profesores</h1>
-        <div className="flex flex-wrap justify-center gap-5">
-          {[...Array(3)].map((_, i) => (
-            <div
-              key={i}
-              className="w-96  rounded-2xl font-bold bg-white pt-8 px-8 pb-3 flex flex-col justify-between"
-            >
-              <div className="w-full h-72 bg-black rounded-2xl flex flex-row">
-                <Image
-                  src={"/profesor.png"}
-                  width={100}
-                  height={100}
-                  alt="profesor"
-                  className="self-end mx-auto h-[19rem] w-auto"
-                />
-              </div>
-              <h1 className="mx-auto text-xl mt-5">Vicente Berroeta</h1>
-              <p className="mx-auto font-semibold text-primary">
-                Prof. de Programación
-              </p>
-            </div>
-          ))}
+      <Profesores />
+      <div className="flex flex-col lg:flex-row lg:w-5/6 mx-auto  py-24 gap-y-14">
+        <div className="lg:w-2/6 bg-gray-300 rounded-2xl">
+          <ImagePrueba />
         </div>
-      </div>
-      <div className="flex flex-row w-5/6 mx-auto  py-24">
-        <div className="w-2/6 bg-gray-300 rounded-2xl"></div>
-        <div className="w-4/6 flex flex-col px-14 gap-y-8">
+        <div className="lg:w-4/6 flex flex-col px-14 gap-y-8">
           <div className="self-end absolute">
             <Quote size={70} fill="#169CD4" color="#169CD4" />
           </div>
@@ -179,7 +129,9 @@ export default function Home() {
           </Button>
           <h1 className="text-4xl">Testimonios</h1>
           <div className="flex flex-row gap-x-5">
-            <div className="w-14 h-14 bg-black rounded-full"></div>
+            <div className="w-14 h-14 p-3 bg-gray-200 rounded-full">
+              <ImagePrueba />
+            </div>
             <div className="flex flex-col">
               <h1 className="text-primary font-bold">Por Felipe Ponce</h1>
               <p className="text-gray-500">Estudiante de informatica</p>
@@ -197,7 +149,7 @@ export default function Home() {
         <div className="py-24 flex flex-col w-4/6 gap-y-14 mx-auto ">
           <Button
             variant={"secondary"}
-            className="rounded-full shadow-lg w-1/6  "
+            className="rounded-full shadow-lg lg:w-1/6  "
           >
             Nuestro Blog
           </Button>
@@ -207,14 +159,16 @@ export default function Home() {
             </h1>
             <Button size={"lg"}>Ver más</Button>
           </div>
-          <div className="flex flex-row h-[30rem] gap-x-5">
-            <div className="h-full w-1/2 rounded-2xl bg-red-300 relative flex flex-row">
-              <Image
-                src={"/jovenes.jpeg"}
-                fill
-                className="object-cover rounded-2xl "
-                alt="jovenes"
-              />
+          <div className="flex flex-col lg:flex-row h-[30rem] gap-x-5">
+            <div className="hidden lg:h-full lg:w-1/2 rounded-2xl bg-red-300 relative lg:flex flex-row">
+              <ImagePrueba>
+                <Image
+                  src={"/jovenes.jpeg"}
+                  fill
+                  className="object-cover rounded-2xl "
+                  alt="jovenes"
+                />
+              </ImagePrueba>
               <div className="h-full w-full bg-gradient-to-t rounded-2xl from-black/100 absolute"></div>
               <div className="w-full absolute h-1/5 self-end  px-14 ">
                 <div className="flex flex-row gap-x-5 text-primary">
@@ -226,7 +180,7 @@ export default function Home() {
                 </h1>
               </div>
             </div>
-            <div className="flex flex-col w-1/2 gap-y-5 ">
+            <div className="flex flex-col lg:w-1/2 gap-y-5 ">
               {[...Array(2)].map((item) => (
                 <div className="h-1/2 w-full flex flex-row gap-x-5 bg-white rounded-2xl ">
                   <div className="w-2/5 rounded-l-2xl h-full bg-black relative">
