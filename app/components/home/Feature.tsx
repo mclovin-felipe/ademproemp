@@ -4,15 +4,15 @@ import EmblaCarousel from "@/components/Carousel/EmblaCarousel";
 
 const Feature = () => {
   return (
-    <div className="flex min-h-screen flex-col justify-start items-center ">
-      <div className="absolute h-1/2 bg-gray-50 w-full shadow-md -z-40 "></div>
-      <div className="z-10 mt-24 flex flex-col items-center gap-y-10">
+    <div className="flex min-h-screen flex-col justify-start items-center  ">
+      {/* <div className="absolute h-1/2 bg-gray-50 w-5/6 shadow-md -z-40 "></div> */}
+      <div className=" mt-24 flex flex-col items-center ">
         <h1 className="text-4xl">Por qué elegirnos?</h1>
         <p className="w-1/2 text-center">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla vero
           soluta natus vel delectus molestias alias.
         </p>
-        <div className="w-5/6">
+        <div className="w-3/5">
           <EmblaCarousel
             slides={[...Array(3)].map((_, i) => (
               <Card />
