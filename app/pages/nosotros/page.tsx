@@ -10,6 +10,7 @@ import {
 import ImagePrueba from "@/app/components/layout/Image";
 import Feature from "@/app/components/home/Feature";
 import EmblaCarousel from "@/components/Carousel/EmblaCarousel";
+import Contacto from "@/app/components/global/contacto";
 
 const Page = () => {
   return (
@@ -70,22 +71,7 @@ const Page = () => {
         </div>
       </div>
       {/* COntacto */}
-      <div
-        className="flex justify-center items-center   h-96 overflow-y-scroll bg-cover bg-fixed bg-center bg-no-repeat shadow-lg w-full flex-col  "
-        style={{ backgroundImage: "url(/jovenes.jpeg)" }}
-      >
-        <div className="bg-black/70 text-white  h-full w-full flex flex-row justify-between px-[14%] items-center">
-          <div>
-            <h1 className="text-xl">
-              Somos la respuesta a tus preguntas las 24/7
-            </h1>
-            <h1 className="text-4xl font-bold mt-5">Necesitas ayuda?</h1>
-          </div>
-          <Button className="text-xl py-5 px-10 rounded-full">
-            Contactanos
-          </Button>
-        </div>
-      </div>
+      <Contacto />
       {/* <Profesores home={false} /> */}
       <section className="flex flex-col items-center gap-y-14 bg-[#F3F8FB] py-14">
         <Button variant={"secondary"} className="rounded-full shadow-lg w-36">

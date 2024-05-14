@@ -6,7 +6,7 @@ const Cursos = () => {
       <Button variant={"secondary"} className="rounded-full shadow-lg w-36">
         Nuestros cursos
       </Button>
-      <h1 className="text-white text-4xl">Nustros mejores cursos</h1>
+      <h1 className="text-white text-4xl px-5">Nustros mejores cursos</h1>
       <Tabs />
     </div>
   );

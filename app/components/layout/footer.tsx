@@ -14,7 +14,7 @@ const Footer = () => {
         </Button>
       </div>
 
-      <div className="w-5/6 mx-auto p-16 border grid gap-y-14 lg:grid-cols-6 rounded-2xl gap-x-10 border-[#173F40] my-5">
+      <div className="w-5/6 mx-auto p-5 lg:p-16 border grid gap-y-14 lg:grid-cols-6 rounded-2xl gap-x-10 border-[#173F40] my-5">
         <div className="flex flex-col justify-between gap-y-3 col-span-2">
           <div>Logo</div>
           <p className="text-sm w-5/6">

@@ -5,6 +5,7 @@ import { FrequentQuestion, Card, Cursos, Profesores, Tabs } from "./components";
 import ImagePrueba from "./components/layout/Image";
 import EmblaCarousel from "@/components/Carousel/EmblaCarousel";
 import Feature from "./components/home/Feature";
+import Contacto from "./components/global/contacto";
 export default function Home() {
   return (
     <main className="  flex min-h-screen flex-col items-center justify-between ">
@@ -61,7 +62,7 @@ export default function Home() {
               </div>
             </div>
           ))}
-          <Button className="w-1/6">Leer más</Button>
+          <Button className="lg:w-1/6">Leer más</Button>
         </div>
       </div>
       {/* Seccion 4 */}
@@ -71,27 +72,12 @@ export default function Home() {
         <Button variant={"secondary"} className="rounded-full shadow-lg w-36">
           Como funciona
         </Button>
-        <h1 className="text-white text-4xl">Nustros mejores cursos</h1>
+        <h1 className="text-white text-4xl ">Nustros mejores cursos</h1>
         <h1 className="text-4xl">
           Nosotros nos enfocamos y ofrecemos su plataforma educativa.
         </h1>
       </div>
-      <div
-        className="flex justify-center items-center   h-96 overflow-y-scroll bg-cover bg-fixed bg-center bg-no-repeat shadow-lg w-full flex-col  "
-        style={{ backgroundImage: "url(/jovenes.jpeg)" }}
-      >
-        <div className="bg-black/70 text-white  h-full w-full flex flex-row justify-between px-[14%] items-center">
-          <div>
-            <h1 className="text-xl">
-              Somos la respuesta a tus preguntas las 24/7
-            </h1>
-            <h1 className="text-4xl font-bold mt-5">Necesitas ayuda?</h1>
-          </div>
-          <Button className="text-xl py-5 px-10 rounded-full">
-            Contactanos
-          </Button>
-        </div>
-      </div>
+      <Contacto />
       <div className=" gap-x-5 grid lg:grid-cols-2 w-5/6 min-h-[50vh]" id="FAQ">
         <div className="py-14">
           <ImagePrueba />
@@ -145,7 +131,7 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div className="bg-[#E9F3F5] w-full">
+      <div className="bg-[#E9F3F5] min-h-screen w-full">
         <div className="py-24 flex flex-col w-4/6 gap-y-14 mx-auto ">
           <Button
             variant={"secondary"}
@@ -182,8 +168,8 @@ export default function Home() {
             </div>
             <div className="flex flex-col lg:w-1/2 gap-y-5 ">
               {[...Array(2)].map((item) => (
-                <div className="h-1/2 w-full flex flex-row gap-x-5 bg-white rounded-2xl ">
-                  <div className="w-2/5 rounded-l-2xl h-full bg-black relative">
+                <div className="h-1/2 w-full flex flex-col lg:flex-row gap-x-5 bg-white rounded-2xl ">
+                  <div className="w-full  lg:w-2/5 rounded-t-2xl lg:rounded-l-2xl h-52 lg:h-full bg-black relative">
                     <Image
                       src={"/jovenes.jpeg"}
                       fill
@@ -191,13 +177,13 @@ export default function Home() {
                       alt="jovenes"
                     />
                   </div>
-                  <div className="w-3/5 h-full flex flex-col justify-between py-14  ">
-                    <div className="flex flex-row gap-x-5 text-primary">
+                  <div className="lg:w-3/5 h-full flex flex-col justify-between py-14 items-center  ">
+                    <div className="flex flex-row gap-x-5 text-primary order-last lg:-order-last">
                       <h1>15 Dic 2023</h1>
                       <h1>Por Felipe</h1>
                     </div>
                     <h1 className="text-2xl font-bold">Titulo de prueba</h1>
-                    <p>
+                    <p className="text-center">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
                     </p>
                   </div>
@@ -208,7 +194,6 @@ export default function Home() {
         </div>
         <div className="h-44"></div>
       </div>
-
     </main>
   );
 }

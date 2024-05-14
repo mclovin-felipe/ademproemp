@@ -11,8 +11,8 @@ const ProfesorCard = ({
   if (home) {
     return (
       <Link href="/profesores/1">
-        <div className="  rounded-2xl font-bold bg-white pt-8 px-8 pb-3 flex flex-col justify-between">
-          <div className="w-full h-72 bg-black rounded-2xl flex flex-row">
+        <div className="  rounded-2xl lg:w-96 font-bold bg-white pt-8  pb-3 flex flex-col justify-between">
+          <div className="w-full h-72 bg-black lg:rounded-2xl flex flex-row">
             <Image
               src={"/profesor.png"}
               width={100}
@@ -31,7 +31,7 @@ const ProfesorCard = ({
   }
   return (
     <Link href={"/profesores/1"}>
-      <div className="p-5 rounded-2xl  flex flex-col lg:w-96 ">
+      <div className="lg:p-5 rounded-2xl  flex flex-col lg:w-96 ">
         <div className="w-full h-96 relative bg-gray-300 rounded-t-2xl flex flex-row ">
           <div className="h-32 w-10 bg-black absolute z-40 self-end rounded-lg hover:bg-primary mb-10  flex flex-col justify-between ">
             <Facebook size={20} className="text-white mx-auto my-2" />

@@ -12,7 +12,7 @@ const FrequentQuestion = () => {
       }`}
     >
       <div
-        className={`flex flex-row transition-all duration-1000 justify-between w-full  items-center `}
+        className={`flex flex-row gap-x-5 transition-all duration-1000 justify-between w-full  items-center `}
       >
         <h3
           className={`font-bold transition-all duration-750  ${
