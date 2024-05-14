@@ -12,7 +12,7 @@ const Feature = () => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla vero
           soluta natus vel delectus molestias alias.
         </p>
-        <div className="w-3/5">
+        <div className="px-5">
           <EmblaCarousel
             slides={[...Array(3)].map((_, i) => (
               <Card />
