@@ -28,9 +28,7 @@ const Page = () => {
   }, [isMobile]);
   useEffect(() => {
     const fetchApi = async () => {
-      const res = await fetch(
-        "https://apibackend-nso31vbyn-mclovin-felipe-s-team.vercel.app/"
-      );
+      const res = await fetch("https://apibackend-nu.vercel.app/");
       const data = await res.json();
       console.log(data);
     };
