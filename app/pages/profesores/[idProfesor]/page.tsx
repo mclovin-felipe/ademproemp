@@ -28,13 +28,16 @@ const Page = ({ params }: { params: any }) => {
           </p>
           <div className="flex gap-x-5">
             {[...Array(4)].map((_, i) => (
-              <div className="h-10 w-10 bg-white drop-shadow-2xl rounded-full"></div>
+              <div
+                key={i}
+                className="h-10 w-10 bg-white drop-shadow-2xl rounded-full"
+              ></div>
             ))}
           </div>
           <div className="w-full h-0.5 bg-primary rounded-full flex items-center justify-center"></div>
           <div className="flex justify-between flex-wrap gap-5 w-5/6">
             {[...Array(4)].map((item, index) => (
-              <div className="flex flex-row w-[45%] gap-x-3 ">
+              <div key={index} className="flex flex-row w-[45%] gap-x-3 ">
                 <div className="w-14 h-14 rounded-full  shadow-2xl flex items-center justify-center">
                   <User />
                 </div>

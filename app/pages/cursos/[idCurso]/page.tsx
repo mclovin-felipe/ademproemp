@@ -71,7 +71,10 @@ const Page = ({
               width={400}
             />
             {[...Array(8)].map((_, i) => (
-              <div className="flex flex-row justify-between py-5 border-b pb-5">
+              <div
+                key={i}
+                className="flex flex-row justify-between py-5 border-b pb-5"
+              >
                 <div className="flex flex-row">
                   <Timer /> <h1>Duración</h1>
                 </div>
@@ -90,7 +93,10 @@ const Page = ({
           <div className="w-full bg-primary/5 px-10 py-8 gap-y-3 flex flex-col rounded-lg">
             <h1 className="text-4xl font-bold">Horas de trabajo</h1>
             {[...Array(3)].map((_, i) => (
-              <div className="flex flex-row px-5 py-4 shadow-lg bg-white my-2 rounded-lg text-gray-600  ">
+              <div
+                key={i}
+                className="flex flex-row px-5 py-4 shadow-lg bg-white my-2 rounded-lg text-gray-600  "
+              >
                 <Timer className="mr-2" /> Lunes - Viernes 13:00 - 14:000
               </div>
             ))}

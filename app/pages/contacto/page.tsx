@@ -41,7 +41,10 @@ const Page = () => {
       </div>
       <div className=" mt-14 lg:w-4/6 mx-auto gap-x-5  flex flex-col lg:flex-row justify-between items-center">
         {[...Array(3)].map((_, i) => (
-          <div className="lg:w-1/3 rounded-2xl py-10 px-5  border items-center gap-x-3 justify-center border-gray-100 flex flex-row">
+          <div
+            key={i}
+            className="lg:w-1/3 rounded-2xl py-10 px-5  border items-center gap-x-3 justify-center border-gray-100 flex flex-row"
+          >
             <Headset size={32} />
             <div className="flex flex-col gap-y-2 text-xl font-bold">
               <h1 className="text-primary">Llamamnos</h1>

@@ -15,7 +15,7 @@ const Feature = () => {
         <div className="px-5">
           <EmblaCarousel
             slides={[...Array(3)].map((_, i) => (
-              <Card />
+              <Card key={i} />
             ))}
           />
         </div>

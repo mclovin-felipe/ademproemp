@@ -27,7 +27,7 @@ const Profesores = ({ home = true }: { home?: boolean }) => {
       <div className="flex flex-wrap w-4/6 justify-center gap-5">
         <Carousel
           slides={[...Array(3)].map((_, i) => (
-            <ProfesorCard home={home} />
+            <ProfesorCard home={home} key={i} />
           ))}
         />
       </div>

@@ -29,8 +29,10 @@ const Footer = () => {
           <h1 className={"text-lg font-bold"}>Acceso rapido</h1>
           <div className="w-1/6 h-1 bg-primary mt-2 "></div>
           <ul className="flex flex-col gap-y-2 mt-5">
-            {routes.map((route) => (
-              <Link href={route.path}>{route.title}</Link>
+            {routes.map((route, index) => (
+              <Link key={index} href={route.path}>
+                {route.title}
+              </Link>
             ))}
           </ul>
         </div>
@@ -48,7 +50,10 @@ const Footer = () => {
           <div className="w-1/6 h-1 bg-primary mt-2 "></div>
           <div className="flex flex-col gap-y-5 mt-5">
             {[...Array(3)].map((item) => (
-              <div className="flex flex-row bg-secondary items-center p-2 gap-x-5 rounded-md  ">
+              <div
+                key={item}
+                className="flex flex-row bg-secondary items-center p-2 gap-x-5 rounded-md  "
+              >
                 <div className="h-14 w-14 bg-primary rounded-md  "></div>
                 <div className="flex flex-col gap-y-2 justify-center items-start">
                   <h1>Ubicación</h1>

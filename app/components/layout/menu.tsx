@@ -47,9 +47,9 @@ const Menu = ({
             {titulo}
           </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-3 p-6 lg:w-[400px] lg:w-[500px] ">
-              {subMenu.map((item: Route) => (
-                <ListItem href="/#faq" title={item.title}>
+            <ul className="grid gap-3 p-6  lg:w-[500px] ">
+              {subMenu.map((item: Route, index) => (
+                <ListItem href="/#faq" key={index} title={item.title}>
                   {item.description}
                 </ListItem>
               ))}

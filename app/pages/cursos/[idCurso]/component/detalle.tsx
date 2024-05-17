@@ -8,6 +8,7 @@ const Detalle = () => {
       <div className="flex flex-wrap lg:flex-row justify-between gap-5 py-14">
         {Tabs.map((item, index) => (
           <Button
+            key={index}
             onClick={() => setTab(index)}
             variant={tab === index ? "default" : "outline"}
             className="w-1/4 lg:w-1/3 "
@@ -41,7 +42,7 @@ const Detalle = () => {
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
           <div className="grid lg:grid-cols-2 gap-x-5">
             {[...Array(2)].map((_, i) => (
-              <div className="rounded-md border border-gray-100 p-10">
+              <div key={i} className="rounded-md border border-gray-100 p-10">
                 <h1 className="text-2xl font-bold">
                   Lorem ipsum dolor sit amet consectetur.
                 </h1>

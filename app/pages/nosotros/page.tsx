@@ -37,7 +37,7 @@ const Page = () => {
           </p>
           <div className="grid grid-cols-2 gap-x-3">
             {[...Array(4)].map((_, i) => (
-              <div className="flex flex-row items-center gap-x-3">
+              <div key={i} className="flex flex-row items-center gap-x-3">
                 <CheckCircle2 size={24} />
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
               </div>
@@ -81,7 +81,10 @@ const Page = () => {
         <div className=" w-4/6 ">
           <EmblaCarousel
             slides={[...Array(3)].map((_, i) => (
-              <div className=" h-[28rem]  bg-white flex flex-col justify-between rounded-2xl">
+              <div
+                key={i}
+                className=" h-[28rem]  bg-white flex flex-col justify-between rounded-2xl"
+              >
                 <div className="h-1/2 relative w-full">
                   <div className="z-20 absolute bg-primary text-white flex flex-row text-xs px-3 py-1 rounded-lg m-5 ">
                     <Calendar size={14} />

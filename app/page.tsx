@@ -47,8 +47,8 @@ export default function Home() {
           <h1 className="text-4xl">
             Nosotros nos enfocamos y ofrecemos su plataforma educativa.
           </h1>
-          {[...Array(2)].map((item) => (
-            <div className="flex flex-row gap-x-5  items-center">
+          {[...Array(2)].map((item, index) => (
+            <div key={index} className="flex flex-row gap-x-5  items-center">
               <div className="h-24 w-24  rounded-2xl">
                 <ImagePrueba />
               </div>
@@ -167,8 +167,11 @@ export default function Home() {
               </div>
             </div>
             <div className="flex flex-col lg:w-1/2 gap-y-5 ">
-              {[...Array(2)].map((item) => (
-                <div className="h-1/2 w-full flex flex-col lg:flex-row gap-x-5 bg-white rounded-2xl ">
+              {[...Array(2)].map((item, index) => (
+                <div
+                  key={index}
+                  className="h-1/2 w-full flex flex-col lg:flex-row gap-x-5 bg-white rounded-2xl "
+                >
                   <div className="w-full  lg:w-2/5 rounded-t-2xl lg:rounded-l-2xl h-52 lg:h-full bg-black relative">
                     <Image
                       src={"/jovenes.jpeg"}

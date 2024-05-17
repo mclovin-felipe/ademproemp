@@ -26,6 +26,16 @@ const Page = () => {
   useEffect(() => {
     if (isMobile) setHorizontal(true);
   }, [isMobile]);
+  useEffect(() => {
+    const fetchApi = async () => {
+      const res = await fetch(
+        "https://apibackend-nso31vbyn-mclovin-felipe-s-team.vercel.app/"
+      );
+      const data = await res.json();
+      console.log(data);
+    };
+    fetchApi();
+  }, []);
   return (
     // TODO: CAMBIAR IMAGENES
     <div>
@@ -74,7 +84,10 @@ const Page = () => {
 
           <Categoria titulo="Categoria">
             {[...Array(7)].map((item) => (
-              <div className="flex items-center space-x-2 border-b pb-5">
+              <div
+                key={item}
+                className="flex items-center space-x-2 border-b pb-5"
+              >
                 <Checkbox id="terms" />
                 <Label
                   htmlFor="terms"
@@ -87,7 +100,10 @@ const Page = () => {
           </Categoria>
           <Categoria titulo="Tutores">
             {[...Array(3)].map((item) => (
-              <div className="flex items-center space-x-2 border-b pb-5">
+              <div
+                key={item}
+                className="flex items-center space-x-2 border-b pb-5"
+              >
                 <Checkbox id="terms" />
                 <Label
                   htmlFor="terms"
@@ -100,7 +116,10 @@ const Page = () => {
           </Categoria>
           <Categoria titulo="Precios">
             {[...Array(2)].map((item) => (
-              <div className="flex items-center space-x-2 border-b pb-5">
+              <div
+                key={item}
+                className="flex items-center space-x-2 border-b pb-5"
+              >
                 <Checkbox id="terms" />
                 <Label
                   htmlFor="terms"
