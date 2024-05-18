@@ -40,6 +40,7 @@ const Tabs = () => {
           ))}
         </ul>
       </div>
+
       <div>
         <Carousel slides={Cards()} />
       </div>
