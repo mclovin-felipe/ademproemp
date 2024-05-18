@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { ForwardIcon, Quote } from "lucide-react";
+import { ForwardIcon, Quote, ArrowRight } from "lucide-react";
 import { FrequentQuestion, Card, Cursos, Profesores, Tabs } from "./components";
 import ImagePrueba from "./components/layout/Image";
 import EmblaCarousel from "@/components/Carousel/EmblaCarousel";
@@ -21,7 +21,7 @@ export default function Home() {
           </p>
           <Button className="flex gap-x-2" size={"lg"}>
             Nuestros horarios
-            <ForwardIcon />{" "}
+            <ArrowRight />{" "}
           </Button>
         </div>
         <div className="hidden w-3/5 h-full  relative lg:flex justify-center items-center">
@@ -38,8 +38,8 @@ export default function Home() {
       </div>
       <Feature />
       {/* Seccion3  */}
-      <div className="grid lg:grid-cols-2 mb-14 px-5 lg:px-0">
-        <div></div>
+      <div className="grid w-5/6 lg:grid-cols-2 gap-x-5 mb-14 px-5 lg:px-0">
+        <ImagePrueba />
         <div className="  flex items-center lg:items-start flex-col gap-y-14">
           <Button variant={"secondary"} className="rounded-full shadow-lg w-36">
             Sobre Nosotros
@@ -131,7 +131,7 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div className="bg-[#E9F3F5] min-h-screen w-full">
+      <div className="bg-[#E9F3F5]  w-full">
         <div className="py-24 flex flex-col w-4/6 gap-y-14 mx-auto ">
           <Button
             variant={"secondary"}

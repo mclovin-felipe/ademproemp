@@ -10,11 +10,13 @@ import {
   InstagramIcon,
   XIcon,
   PhoneCall,
+  ArrowRight,
   ForwardIcon,
 } from "lucide-react";
 import Menu from "./menu";
 import { routes } from "@/app/routes/routes";
 import { Route } from "@/types/routes";
+import SearchBox from "../global/searchBox";
 const NavBar = () => {
   return (
     <nav className="hidden w-full  lg:flex flex-col">
@@ -42,11 +44,8 @@ const NavBar = () => {
             <h2 className="text-gray-400 text-lg">Direccion</h2>
           </div>
         </Button>
-        <div className="w-1/4 h-14 flex flex-row`">
-          <Input className="h-14 bg-primary/10" placeholder="Buscar" />
-          <Button className="h-full -ml-3">
-            <Search color="white" />
-          </Button>
+        <div className="w-1/4  flex flex-row`">
+          <SearchBox />
         </div>
       </div>
       <div className="text-white px-8 font-semibold h-20 bg-primary w-5/6 mx-auto rounded-2xl flex items-center justify-between transform skew-x-[-10deg] -mb-10">
@@ -79,7 +78,7 @@ const NavBar = () => {
           variant={"secondary"}
         >
           <h1 className="skew-x-[10deg]">Inscribete</h1>
-          <ForwardIcon />
+          <ArrowRight />
         </Button>
       </div>
     </nav>

@@ -5,6 +5,7 @@ import {
   Calendar,
   CheckCircle2,
   ForwardIcon,
+  ArrowRight,
   MessageCircle,
 } from "lucide-react";
 import ImagePrueba from "@/app/components/layout/Image";
@@ -107,7 +108,7 @@ const Page = () => {
                 </div>
                 <div className="flex flex-row justify-between p-3 border-t">
                   <Button variant={"ghost"} className="font-bold">
-                    Leer más <ForwardIcon />
+                    Leer más <ArrowRight />
                   </Button>
                   <div className="flex flex-row text-sm items-center gap-x-2">
                     <MessageCircle />

@@ -19,6 +19,7 @@ import { CardCurso, Header } from "@/app/components";
 import { useEffect, useState } from "react";
 import Categoria from "./component/CAtegory";
 import useIsMobile from "@/app/hook/useCelular";
+import SearchBox from "@/app/components/global/searchBox";
 
 const Page = () => {
   const [horizontal, setHorizontal] = useState(false);
@@ -26,14 +27,7 @@ const Page = () => {
   useEffect(() => {
     if (isMobile) setHorizontal(true);
   }, [isMobile]);
-  useEffect(() => {
-    const fetchApi = async () => {
-      const res = await fetch("https://apibackend-nu.vercel.app/");
-      const data = await res.json();
-      console.log(data);
-    };
-    fetchApi();
-  }, []);
+
   return (
     // TODO: CAMBIAR IMAGENES
     <div>
@@ -73,13 +67,7 @@ const Page = () => {
       {/* CUERPO CURSOS */}
       <div className="w-5/6 mx-auto grid grid-cols-7 gap-x-5 mt-14">
         <div className=" col-span-7  lg:col-span-2  flex flex-col gap-y-5">
-          <div className="w-full bg-primary/5 p-5 flex flex-row rounded-lg ">
-            <Input className="h-14 bg-primary/10" placeholder="Buscar" />
-            <Button className="h-full -ml-3">
-              <Search color="white" />
-            </Button>
-          </div>
-
+          <SearchBox />
           <Categoria titulo="Categoria">
             {[...Array(7)].map((item) => (
               <div
