@@ -1,11 +1,17 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { ForwardIcon, Quote, ArrowRight } from "lucide-react";
-import { FrequentQuestion, Card, Cursos, Profesores, Tabs } from "./components";
-import ImagePrueba from "./components/layout/Image";
+import {
+  FrequentQuestion,
+  Card,
+  Cursos,
+  Profesores,
+  Tabs,
+} from "../../../components";
+import ImagePrueba from "../../../components/layout/Image";
 import EmblaCarousel from "@/components/Carousel/EmblaCarousel";
-import Feature from "./components/home/Feature";
-import Contacto from "./components/global/contacto";
+import Feature from "../../../components/home/Feature";
+import Contacto from "../../../components/global/contacto";
 export default function Home() {
   return (
     <main className="  flex min-h-screen flex-col items-center justify-between ">

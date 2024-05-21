@@ -7,6 +7,8 @@
       --background: 0 0% 100%;
       --foreground: 240 10% 3.9%;
 
+      --dashboard:0 3% 15%;
+
       --card: 0 0% 100%;
       --card-foreground: 240 10% 3.9%;
 
@@ -74,3 +76,24 @@
       @apply bg-background text-foreground;
     }
   }
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      transform-origin: center bottom;
+      animation: fall 4s linear infinite;
+    }
+  
+    .confetti.square {
+      clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+    }
+  
+    .confetti.triangle {
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    }
+  
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(720deg);
+      }
+    }

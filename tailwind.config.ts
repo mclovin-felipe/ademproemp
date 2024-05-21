@@ -16,9 +16,22 @@ const config = {
       // padding: "2rem",
       screens: {
         "2xl": "1400px",
+        "3xl": "1600px",
+        "4xl": "1920px",
+        "5xl": "2560px",
+        "6xl": "3840px",
+        "7xl": "5120px",
       },
     },
     extend: {
+      screens: {
+        "2xl": "1400px",
+        "3xl": "1600px",
+        "4xl": "1920px",
+        "5xl": "2560px",
+        "6xl": "3840px",
+        "7xl": "5120px",
+      },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
@@ -39,6 +52,10 @@ const config = {
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
+        },
+        dashboard: {
+          DEFAULT: "hsl(var(--dashboard))",
+          // foreground: "hsl(var(--secondary-foreground))",
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",

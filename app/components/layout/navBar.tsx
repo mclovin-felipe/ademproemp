@@ -21,7 +21,10 @@ const NavBar = () => {
   return (
     <nav className="hidden w-full  lg:flex flex-col">
       <div className="bg-primary px-[14%] h-12 flex flex-row justify-end items-center">
-        <User color={"white"} /> <Button>Ingresar/Registrar</Button>
+        <Button>
+          <User color={"white"} />
+          Ingresar/Registrar
+        </Button>
       </div>
       <div className="w-5/6 h-32 mx-auto flex justify-between items-center flex-row">
         <AtomIcon size={"80"} />

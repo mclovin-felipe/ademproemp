@@ -2,7 +2,7 @@ import { Route } from "@/types/routes";
 
 export const routes: Route[] = [
   {
-    path: "/",
+    path: "/home",
     title: "Inicio",
   },
   {
