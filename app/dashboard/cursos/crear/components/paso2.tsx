@@ -1,3 +1,5 @@
+"use client";
+import React, { useState, useEffect } from "react";
 import {
   Select,
   SelectContent,
@@ -9,9 +11,9 @@ import {
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { Profesor } from "@/types/profesores";
-async function getData() {
-  // Fetch data from your API here.
-  setTimeout(() => {}, 1000);
+
+async function getData(): Promise<Profesor[]> {
+  // Simular la obtención de datos de una API.
   return new Promise((resolve) => {
     setTimeout(
       () =>
@@ -21,7 +23,6 @@ async function getData() {
             nombre: "Vicente",
             apellido: "Berroeta",
             email: "vberroeta@gmail.com",
-
             telefono: "+56 987878723",
             direccion: "Calle falsa 123",
             fechaNacimiento: "19 de Julio, 2023",
@@ -38,15 +39,22 @@ async function getData() {
     );
   });
 }
-const Paso2 = async ({
-  HandlerStep,
-}: {
-  HandlerStep: (step: number) => void;
-}) => {
-  const data = await getData();
+
+const Paso2 = ({ HandlerStep }: { HandlerStep: (step: number) => void }) => {
+  const [data, setData] = useState<Profesor[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await getData();
+      setData(result);
+      setLoading(false);
+    };
+    fetchData();
+  }, []);
+
   return (
-    <div className="flex flex-col gap-y-5 w-full bg-[#191919] rounded-2xl p-5  min-h-[60vh]">
-      {/*  */}
+    <div className="flex flex-col gap-y-5 w-full bg-[#191919] rounded-2xl p-5 min-h-[60vh]">
       <h1 className="col-span-2 text-4xl font-semibold">
         Seleccionar un profesor
       </h1>
@@ -54,38 +62,42 @@ const Paso2 = async ({
         A continuación, se le solicita que el usuario elija un profesor para el
         curso.
       </p>
-      <Select>
-        <SelectTrigger className="w-5/6 bg-dashboard border-0">
-          <SelectValue placeholder="Selecciona un profesor" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectGroup>
-            <SelectLabel>Profesores</SelectLabel>
-            {data.map((item: Profesor) => (
-              <SelectItem value={item.idProfesor.toString()}>
-                {item.nombre} {item.apellido}
-              </SelectItem>
-            ))}
-          </SelectGroup>
-        </SelectContent>
-      </Select>
+      {loading ? (
+        <p>Cargando...</p>
+      ) : (
+        <Select>
+          <SelectTrigger className="w-5/6 bg-dashboard border-0">
+            <SelectValue placeholder="Selecciona un profesor" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectLabel>Profesores</SelectLabel>
+              {data.map((item) => (
+                <SelectItem
+                  key={item.idProfesor}
+                  value={item.idProfesor.toString()}
+                >
+                  {item.nombre} {item.apellido}
+                </SelectItem>
+              ))}
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+      )}
       <div className="flex flex-row gap-x-5 justify-end self-end bottom-0">
         <Button
-          size={"lg"}
+          size="lg"
           onClick={() => HandlerStep(0)}
-          variant={"dashboardOutline"}
+          variant="dashboardOutline"
         >
           Volver
         </Button>
-        <Button
-          onClick={() => HandlerStep(2)}
-          size={"lg"}
-          variant={"dashboard"}
-        >
+        <Button onClick={() => HandlerStep(2)} size="lg" variant="dashboard">
           Continuar
         </Button>
       </div>
     </div>
   );
 };
+
 export default Paso2;

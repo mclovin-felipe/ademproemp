@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
+
 const SHAPES = ["square", "triangle"];
 const COLOR_DIGIT = "ABCDEF1234567890";
+
 const ConfettiButton = ({
   isConfettiActive,
   setConfettiActive,
@@ -8,13 +10,14 @@ const ConfettiButton = ({
   isConfettiActive: boolean;
   setConfettiActive: (confetti: boolean) => void;
 }) => {
-  // const [isConfettiActive, setConfettiActive] = useState(false);
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
   useEffect(() => {
     if (isConfettiActive) {
       generateConfetti();
     }
   }, [isConfettiActive]);
+
   const generateRandomColor = () => {
     let color = "#";
     for (let i = 0; i < 6; i++) {
@@ -31,17 +34,20 @@ const ConfettiButton = ({
         const positionX = Math.random() * window.innerWidth;
         const positionY = Math.random() * window.innerHeight;
         const rotation = Math.random() * 360;
-        const size = Math.floor(Math.random() * (20 - 5 + 1)) + 5; // Set confetti styles
+        const size = Math.floor(Math.random() * (20 - 5 + 1)) + 5;
+
+        confetti.style.position = "absolute";
         confetti.style.left = `${positionX}px`;
         confetti.style.top = `${positionY}px`;
         confetti.style.transform = `rotate(${rotation}deg)`;
         confetti.className =
-          "confetti " + SHAPES[Math.floor(Math.random() * 3)];
+          "confetti " + SHAPES[Math.floor(Math.random() * SHAPES.length)];
         confetti.style.width = `${size}px`;
         confetti.style.height = `${size}px`;
-        confetti.style.backgroundColor = generateRandomColor(); // Append confetti to the container
+        confetti.style.backgroundColor = generateRandomColor();
+
         container.appendChild(confetti);
-        // Remove confetti element after animation duration (4 seconds)
+
         setTimeout(() => {
           container.removeChild(confetti);
         }, 4000);
@@ -59,4 +65,5 @@ const ConfettiButton = ({
     </div>
   );
 };
+
 export default ConfettiButton;
