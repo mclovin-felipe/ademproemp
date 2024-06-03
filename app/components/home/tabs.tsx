@@ -1,9 +1,9 @@
 "use client";
-import { useState } from "react";
-import Tab from "./tab";
-import { CursosProps, DatosProps } from "@/types/cursos";
-import CardCurso from "../global/cardCurso";
 import Carousel from "@/components/Carousel/EmblaCarousel";
+import { CursosProps, DatosProps } from "@/types/cursos";
+import { useState } from "react";
+import CardCurso from "../global/cardCurso";
+import Tab from "./tab";
 const Tabs = () => {
   const [active, setActive] = useState(0);
 
@@ -12,9 +12,10 @@ const Tabs = () => {
       return datos.map((item, index) =>
         item.cursos.map((curso, index) => (
           <CardCurso key={index} item={curso} home={true} />
-        ))
+        )),
       );
     }
+
     return datos[active - 1]?.cursos.map((item: CursosProps, index) => (
       <CardCurso key={index} item={item} home={true} />
     ));

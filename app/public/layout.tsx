@@ -6,7 +6,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div className="">
       <NavBar />
       <NavMobile />
-    {children}
+      {children}
+      <div className="h-44"></div>
       <Footer />
     </div>
   );

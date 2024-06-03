@@ -17,14 +17,17 @@ import Menu from "./menu";
 import { routes } from "@/app/routes/routes";
 import { Route } from "@/types/routes";
 import SearchBox from "../global/searchBox";
+import Link from "next/link";
 const NavBar = () => {
   return (
     <nav className="hidden w-full  lg:flex flex-col">
       <div className="bg-primary px-[14%] h-12 flex flex-row justify-end items-center">
-        <Button>
-          <User color={"white"} />
-          Ingresar/Registrar
-        </Button>
+        <Link href="/login">
+          <Button>
+            <User color={"white"} />
+            Ingresar/Registrar
+          </Button>
+        </Link>
       </div>
       <div className="w-5/6 h-32 mx-auto flex justify-between items-center flex-row">
         <AtomIcon size={"80"} />

@@ -12,4 +12,14 @@ export interface CursosProps {
   profesor: string;
   calificacion: number;
   calificaciones: number;
+  categoria: string;
+}
+export interface Category {
+  id: number;
+  name: string;
+}
+export interface CategoryResponse {
+  error: boolean;
+  message: string;
+  data: Category[];
 }

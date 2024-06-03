@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Loading from "./dashboard/loading";
 
 const Page = () => {
   // REDIRECT to /home
@@ -8,10 +9,6 @@ const Page = () => {
     // Redirect to /home
     window.location.href = "/home";
   }, []);
-  return (
-    <div>
-      <h1>Inicio</h1>
-    </div>
-  );
+  return <Loading />;
 };
 export default Page;

@@ -7,20 +7,54 @@ import Paso2 from "./components/paso2";
 import Paso3 from "./components/paso3";
 import Paso4 from "./components/paso4";
 import { useRouter } from "next/navigation";
+import { useForm } from "react-hook-form";
+import { CursosProps } from "@/types/cursos";
 const Page = () => {
   const [step, setStep] = useState(0);
   const router = useRouter();
   const HandlerStep = (step: number) => {
     setStep(step);
   };
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    setValue,
+    formState: { errors },
+  } = useForm<CursosProps>({
+    defaultValues: {
+      nombre: "",
+      descripcion: "",
+      categoria: "",
+      precio: 0,
+      duracion: 0,
+      imagen: "",
+    },
+  });
+
   return (
     <>
-      <Stepper step={step} />
-      {step === 0 && <Paso1 HandlerStep={HandlerStep} />}
-      {step === 1 && <Paso2 HandlerStep={HandlerStep} />}
-      {step === 2 && <Paso3 HandlerStep={HandlerStep} />}
-      {step === 3 && <Paso4 />}
-      {/* <div className="flex flex-row justify-between">
+      <form>
+        <Stepper step={step} />
+        {step === 0 && (
+          <Paso1
+            watch={watch}
+            errors={errors}
+            register={register}
+            setValue={setValue}
+            HandlerStep={HandlerStep}
+          />
+        )}
+        {step === 1 && (
+          <Paso2
+            // errors={errors}
+            HandlerStep={HandlerStep}
+          />
+        )}
+        {step === 2 && <Paso3 HandlerStep={HandlerStep} />}
+        {step === 3 && <Paso4 />}
+        {/* <div className="flex flex-row justify-between">
         {" "}
         {step <= 2 && (
           <Button
@@ -61,6 +95,7 @@ const Page = () => {
           </Button>
         )}
       </div> */}
+      </form>
     </>
   );
 };
