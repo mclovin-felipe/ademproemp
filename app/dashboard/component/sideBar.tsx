@@ -43,7 +43,9 @@ const SideBar = () => {
   };
   return (
     <div className="w-full flex flex-col border-r h-full border-gray-200 border-opacity-30 shadow-md">
-      <h1 className="text-3xl font-semibold p-5 hidden lg:flex">ADEMPROEM</h1>
+      <h1 className="text-2xl text-center mx-auto py-5 font-semibold  hidden lg:flex">
+        ADEMPROEM
+      </h1>
       <div className="flex flex-col gap-y-5 lg:px-5">
         <ButtonSide pathButton="dashboard">
           <LayoutDashboard /> <span className="hidden lg:flex">Dashboard</span>

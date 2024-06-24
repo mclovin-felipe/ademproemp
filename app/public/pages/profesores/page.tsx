@@ -1,20 +1,21 @@
-// Profesor not found
-// Path: app/pages/profesores/%5BidProfesor%5D/page.tsx
-// Compare this snippet from app/pages/contacto/page.tsx:
-import { Header, ProfesorCard, Profesores } from "@/app/components";
+import { CardProfesor, Header, Search } from "../../component";
 const Page = () => {
   return (
-    <section>
-      <Header image="/profesor.png" titulo="Profesores" />
-      <div className="hidden lg:flex justify-center flex-wrap w-5/6 mx-auto mt-14">
-        {[...Array(5)].map((_, i) => (
-          <ProfesorCard home={false} key={i} />
-        ))}
+    <main className="">
+      <Header title="Profesores" />
+      <div className="w-5/6 mx-auto lg:grid lg:grid-cols-7 p-5">
+        <div className="lg:col-span-2 p-3">
+          <Search />
+        </div>
+        <div className="col-span-5 grid lg:grid-cols-2 2xl:grid-cols-3 5xl:grid-cols-5 gap-5">
+          <CardProfesor />
+          <CardProfesor />
+          <CardProfesor />
+          <CardProfesor />
+          <CardProfesor />
+        </div>
       </div>
-      <div className="lg:hidden">
-        <Profesores home={false} />
-      </div>
-    </section>
+    </main>
   );
 };
 export default Page;

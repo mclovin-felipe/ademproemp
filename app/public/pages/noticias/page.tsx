@@ -1,21 +1,21 @@
-import { Header } from "@/app/components";
-import Image from "next/image";
-import Noticia from "./component/noticia";
-import SearchBox from "@/app/components/global/searchBox";
-import ImagePrueba from "@/app/components/layout/Image";
-import Categoria from "../cursos/component/CAtegory";
+import { CardNoticia, Header, Search } from "../../component";
 
 const Page = () => {
-  return [...Array(3)].map((_, i) => (
-    <Noticia
-      categoria="Marketing"
-      fecha="22 de Julio"
-      autor="Vicente Berroeta"
-      titulo="UX/UI Diseño para principiantes"
-      descripcion="Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, neque ea! Odit nulla dicta libero hic culpa architecto atque non totam fugit. Totam neque velit eos asperiores ab voluptates corrupti!"
-      imagen="/jovenes.jpeg"
-      link="1"
-    />
-  ));
+  return (
+    <main>
+      {/* <Header title="Noticias" image="/profesor.png" /> */}
+      <Header title="Noticias" />
+      <div className="flex flex-col lg:grid lg:grid-cols-7 p-5 w-5/6 mx-auto">
+        <div className="flex flex-col col-span-5 lg:-14 gap-5">
+          <CardNoticia />
+          <CardNoticia />
+          <CardNoticia />
+        </div>
+        <div className="col-span-2 p-3 -order-last lg:order-last">
+          <Search />
+        </div>
+      </div>
+    </main>
+  );
 };
 export default Page;

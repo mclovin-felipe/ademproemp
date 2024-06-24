@@ -1,17 +1,21 @@
 import { Input } from "@/components/ui/input";
 import InputCurso from "./inputCurso";
-import Divider from "@/app/components/global/divider";
 import { Button } from "@/components/ui/button";
 import { Image } from "lucide-react";
 import { Pasos } from "../types";
 import InputEdit from "@/app/dashboard/usuarios/component/InputEdit";
 import { Inputs } from "@/types/input";
 import { Categories } from "@/app/dashboard/component/category";
-const Paso1 = ({ HandlerStep, register, errors, watch, setValues }: Pasos) => {
+const Paso1 = ({
+  HandlerStep,
+  register,
+  errors,
+  watch,
+  setValues = () => {},
+}: Pasos) => {
   return (
     <div className="flex flex-col gap-y-5 w-full bg-[#191919] rounded-2xl p-5 min-h-[40vh]">
       <h1 className="col-span-2 text-4xl font-semibold">Detalle del curso</h1>
-      <Divider />
       <div className="grid lg:grid-cols-4 gap-x-8">
         <div className="bg-[#282626] w-full rounded-2xl flex flex-col justify-center items-center p-10 lg:p-0">
           <Image size={70} />
@@ -38,7 +42,7 @@ const Paso1 = ({ HandlerStep, register, errors, watch, setValues }: Pasos) => {
               <Categories
                 value={watch("categoria")}
                 onChange={(id: string) =>
-                  setValue("categoria", parseInt(id), {
+                  setValues("categoria", parseInt(id), {
                     shouldValidate: true,
                     shouldDirty: true,
                   })

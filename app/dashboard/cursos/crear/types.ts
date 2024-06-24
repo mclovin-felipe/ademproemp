@@ -3,5 +3,5 @@ export interface Pasos {
   register: any;
   errors: any;
   watch: any;
-  setValue: any;
+  setValues: any;
 }

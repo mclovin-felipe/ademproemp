@@ -17,7 +17,8 @@ const Page = async () => {
   const data = await getUsers();
   return (
     <div className="flex flex-col justify-start gap-y-5 items-center">
-      <div className="grid lg:grid-cols-2">
+      <div className="grid lg:grid-cols-3">
+        <div></div>
         <h1 className="text-4xl font-semibold text-center">
           Panel de administración
         </h1>

@@ -6,7 +6,9 @@ import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import onMount from "../hook/useMount";
+import { useRouter } from "next/navigation";
 const Page = () => {
+  const router = useRouter();
   const [visible, setVisible] = useState(false);
   const {
     register,
@@ -19,11 +21,13 @@ const Page = () => {
   return (
     <section className="flex flex-col lg:grid lg:grid-cols-6 h-screen w-full">
       <div className=" h-1/2 lg:h-full col-span-4 w-full bg-black drop-shadow-2xl flex flex-col justify-center items-center  ">
-        <Link className="absolute self-start top-0 m-5 flex gap-x-3" href="/">
-          <Button variant={"dashboardOutline"}>
-            <ArrowLeft /> Volver
-          </Button>
-        </Link>
+        <Button
+          variant={"dashboardOutline"}
+          className="absolute self-start top-0 m-5 flex gap-x-3"
+          onClick={() => router.back()}
+        >
+          <ArrowLeft /> Volver
+        </Button>
         <h1 className="text-3xl lg:text-5xl 2xl:text-9xl text-white font-semibold break-words tracking-[.20em] ">
           Bienvenido
         </h1>

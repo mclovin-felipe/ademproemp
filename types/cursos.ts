@@ -13,6 +13,9 @@ export interface CursosProps {
   calificacion: number;
   calificaciones: number;
   categoria: string;
+  nombre: string;
+  descripcion: string;
+  imagen: string;
 }
 export interface Category {
   id: number;

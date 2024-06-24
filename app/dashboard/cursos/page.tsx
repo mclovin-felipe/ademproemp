@@ -1,7 +1,5 @@
 "use client";
-import SearchBox from "@/app/components/global/searchBox";
-import Tab from "@/app/components/home/tab";
-import ImagePrueba from "@/app/components/layout/Image";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -27,7 +25,7 @@ const Page = () => {
 
       <div className="w-full left-0   max-w-lg text-sm font-medium text-center text-gray-500 border-b border-gray-500 dark:text-gray-400 dark:border-gray-700">
         <ul className="flex flex-wrap  items-start justify-start ">
-          <Tab
+          {/* <Tab
             active={active === 0}
             title="Todos los cursos"
             setActive={setActive}
@@ -44,10 +42,10 @@ const Page = () => {
             title="Draft"
             setActive={setActive}
             index={2}
-          />
+          /> */}
         </ul>
       </div>
-      {active === 0 && (
+      {/* {active === 0 && (
         <Cursos
           cursos={[
             {
@@ -63,7 +61,7 @@ const Page = () => {
             },
           ]}
         />
-      )}
+      )} */}
       {active === 1 && <Cursos />}
       {active === 2 && <Cursos />}
     </div>

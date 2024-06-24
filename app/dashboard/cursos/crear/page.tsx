@@ -28,7 +28,7 @@ const Page = () => {
       descripcion: "",
       categoria: "",
       precio: 0,
-      duracion: 0,
+      duracion: "0",
       imagen: "",
     },
   });
@@ -42,7 +42,7 @@ const Page = () => {
             watch={watch}
             errors={errors}
             register={register}
-            setValue={setValue}
+            setValues={setValue}
             HandlerStep={HandlerStep}
           />
         )}

@@ -1,6 +1,3 @@
-import Divider from "@/app/components/global/divider";
-import SearchBox from "@/app/components/global/searchBox";
-import ImagePrueba from "@/app/components/layout/Image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CursosProps } from "@/types/cursos";
@@ -13,18 +10,14 @@ const Cursos = ({ cursos = [] }: { cursos?: CursosProps[] }) => {
     );
   return (
     <div className="flex flex-col w-full">
-      <div className=" w-1/2 lg:w-1/3 ">
-        <SearchBox />
-      </div>
+      <div className=" w-1/2 lg:w-1/3 ">{/* <SearchBox /> */}</div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 5xl:grid-cols-4 6xl:grid-cols-5  gap-x-5 gap-y-5">
         {cursos.map((_, i) => (
           <div
             key={i}
             className="flex flex-col items-center gap-x-5 justify-between p-3 bg-[#181818] rounded-xl"
           >
-            <div className="h-44 w-full">
-              <ImagePrueba />
-            </div>
+            <div className="h-44 w-full">{/* <ImagePrueba /> */}</div>
             <div className="flex flex-col py-3 gap-y-3 w-full">
               <div className="flex flex-row gap-x-3">
                 <Badge variant={"dashboard"}>Hola</Badge>
@@ -36,7 +29,6 @@ const Cursos = ({ cursos = [] }: { cursos?: CursosProps[] }) => {
                   Impartido por Vicente Berroeta
                 </p>
               </div>
-              <Divider />
             </div>
             <div className="flex flex-row items-center gap-x-3 w-full">
               <h6>24 Estudiantes</h6>
