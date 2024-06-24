@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import InputEdit from "../dashboard/usuarios/component/InputEdit";
+// import InputEdit from "../dashboard/usuarios/component/InputEdit";
+import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
@@ -41,21 +42,21 @@ const Page = () => {
             ease-out ${visible ? "opacity-100" : "opacity-0"}  drop-shadow-2xl`}
         >
           <form className="flex flex-col  bg-black rounded-2xl p-4">
-            <InputEdit
+            <Input
               title={"Correo"}
-              register={register}
-              errors={errors}
+              // register={register}
+              // errors={errors}
               name={"email"}
               placeholder={"Correo"}
-              rules={{}}
+              // rules={{}}
             />
-            <InputEdit
+            <Input
               title={"Contraseña"}
-              register={register}
-              errors={errors}
+              // register={register}
+              // errors={errors}
               name={"password"}
               placeholder={"Contraseña"}
-              rules={{}}
+              // rules={{}}
             />
             <Button
               title={"Iniciar sesión"}
