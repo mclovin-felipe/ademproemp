@@ -64,7 +64,7 @@ export default function Home() {
         </div>
         <div className="p-4 gap-y-5 flex flex-col">
           {/* <Badge text="Sobre nosotros" /> */}
-          <p className="text-gray-600 text-7xl font-extrabold ">
+          <p className="text-gray-600 text-4xl lg:text-7xl font-extrabold ">
             Nosotros nos <span className="text-primary">enfocamos</span> y
             ofrecemos su plataforma educativa.
           </p>
