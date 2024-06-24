@@ -13,6 +13,7 @@ import Landing from "./component/landing";
 import useScrollBeyondFirstScreen from "@/app/hook/firstScreen";
 import { useEffect } from "react";
 import Carousel from "@/components/Carousel/EmblaCarousel";
+import Image from "next/image";
 export default function Home() {
   const isBeyondFirstScreen = useScrollBeyondFirstScreen();
 
@@ -52,15 +53,18 @@ export default function Home() {
           ]}
         />
       </div>
-      <div className="grid lg:grid-cols-2 w-5/6 mx-auto items-center gap-y-6 gap-x-10 min-h-[50vh]">
-        <img
-          src="symbols-come-out-bulb-top-book.jpg"
-          alt="profesor"
-          className="w-full h-[250px] lg:h-full object-cover rounded-lg border"
-        />
+      <div className="grid h-auto lg:grid-cols-2 w-5/6 mx-auto items-center gap-y-6 gap-x-10 min-h-screen">
+        <div className="h-full w-full relative">
+          <Image
+            src="/symbols-come-out-bulb-top-book.jpg"
+            alt="profesor"
+            fill
+            className="w-full h-[250px] lg:h-full object-cover rounded-lg border"
+          />
+        </div>
         <div className="p-4 gap-y-5 flex flex-col">
           {/* <Badge text="Sobre nosotros" /> */}
-          <p className="text-gray-600 text-7xl font-extrabold">
+          <p className="text-gray-600 text-7xl font-extrabold ">
             Nosotros nos <span className="text-primary">enfocamos</span> y
             ofrecemos su plataforma educativa.
           </p>
@@ -94,7 +98,7 @@ export default function Home() {
         </div>
       </div>
       <Contacto />
-      <div className="grid lg:grid-cols-2 w-5/6 mx-auto items-center gap-y-6 gap-x-10 min-h-[50vh]">
+      <div className="grid lg:grid-cols-2 w-5/6 mx-auto items-center gap-y-6 gap-x-10 min-h-[50vh] h-[50vh]">
         <div className="p-4 gap-y-5 flex flex-col h-full">
           {/* <Badge text="Por qué elegirnos?" /> */}
           <h1 className="text-4xl font-bold">Preguntas frecuentes</h1>
@@ -122,11 +126,14 @@ export default function Home() {
             />
           </div>
         </div>
-        <img
-          src="/frequent.jpg"
-          alt="profesor"
-          className="w-full h-[250px] lg:h-full object-contain rounded-lg border-2"
-        />
+        <div className="h-full w-full relative">
+          <Image
+            src="/frequent.jpg"
+            alt="profesor"
+            fill
+            className="w-full h-[250px] lg:h-full object-contain rounded-lg border-2"
+          />
+        </div>
       </div>
       {/* FREQueSN */}
       <div className="flex flex-col py-14 w-full mx-auto items-center gap-y-6 gap-x-10 min-h-[50vh] bg-gradient-to-r from-[#193632] via-[#1E1F22] to-[#0E192B]">

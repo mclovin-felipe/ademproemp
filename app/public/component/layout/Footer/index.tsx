@@ -1,4 +1,6 @@
 import { routes } from "@/app/routes/routes";
+import { Button } from "@/components/ui/button";
+import { PhoneCall } from "lucide-react";
 import Link from "next/link";
 const Footer = () => {
   return (
@@ -12,7 +14,12 @@ const Footer = () => {
             soluta amet, atque et, assumenda autem necessitatibus fugit quod id
             eligendi?
           </h2>
-          <button className="bg-adem h-14 px-4 rounded-lg">Contactanos</button>
+          <Link href="/contacto" className="w-full">
+            <Button className=" h-14 px-4 w-full rounded-lg">
+              <PhoneCall className="mr-2" />
+              Contactanos
+            </Button>
+          </Link>
         </div>
         <div className="flex flex-col gap-y-4">
           <h1 className="text-xl font-bold">Acceso rapido</h1>

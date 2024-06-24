@@ -1,12 +1,18 @@
 import { Calendar, User, ArrowRight } from "lucide-react";
+import Image from "next/image";
 const CardNoticia = () => {
   return (
     <div className="flex flex-col border gap-y-3 w-full border-gray-200 rounded-lg shadow-lg">
-      <img
-        src="/profesor.png"
-        alt="noticia"
-        className="w-full h-[400px] object-cover rounded-lg"
-      />
+      <div className="w-full h-96">
+        <Image
+          src="/contact.jpg"
+          alt="noticia"
+          width={1000}
+          height={400}
+          className="w-full h-[400px] object-cover rounded-lg"
+        />
+      </div>
+
       <div className="flex flex-col gap-y-3 w-5/6 mx-auto p-5">
         <div className="flex flex-row justify-start gap-x-8">
           <div className="flex flex-row items-center gap-x-3">

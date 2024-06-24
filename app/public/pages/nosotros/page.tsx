@@ -1,5 +1,6 @@
 import Carousel from "@/components/Carousel/EmblaCarousel";
 import { Card, Contacto, CardBlog, Header } from "../../component";
+import Image from "next/image";
 const Page = () => {
   return (
     <main className="min-h-screen  flex flex-col justify-start items-center">
@@ -37,8 +38,8 @@ const Page = () => {
           ]}
         />
       </div>
-      <div className="grid lg:grid-cols-2 w-5/6 mx-auto my-16 gap-x-5">
-        <div className="flex flex-col justify-start gap-y-10">
+      <div className="grid lg:grid-cols-2 w-5/6  mx-auto my-16 gap-x-5">
+        <div className="flex flex-col justify-center items-start gap-y-10">
           <h1 className="text-4xl font-bold">Nuestro compromiso</h1>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam
@@ -57,7 +58,7 @@ const Page = () => {
           } -->
         </div> */}
           <div className="rounded-md flex flex-row gap-x-5 p-8 bg-[#F3F8FB]">
-            <div className="h-full w-1/5 rounded-md">
+            <div className="h-full w-1/5 rounded-md items-center justify-center">
               <img
                 src="/profesor.png"
                 alt="imagen"
@@ -83,11 +84,13 @@ const Page = () => {
             reprehenderit dolore natus quaerat earum.
           </p>
         </div>
-        <div className="mt-14 lg:mt-14 h-96 lg:h-full w-full relative">
-          <img
+        <div className=" h-96 lg:h-full w-full relative">
+          <Image
             src="/profesor.png"
             alt="imagen"
-            className="w-full h-full absolute object-cover"
+            width={1000}
+            height={400}
+            className="  object-cover"
           />
         </div>
       </div>
