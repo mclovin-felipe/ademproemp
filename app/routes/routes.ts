@@ -2,28 +2,28 @@ import { Route } from "@/types/routes";
 
 export const routes: Route[] = [
   {
-    path: "/home",
+    path: "/pages/home",
     title: "Inicio",
   },
   {
-    path: "/cursos",
+    path: "/pages/cursos",
     title: "Cursos",
   },
   {
-    path: "/noticias",
+    path: "/pages/noticias",
     title: "Noticias",
   },
   {
-    path: "/contacto",
+    path: "/pages/contacto",
     title: "Contacto",
   },
 
   {
-    path: "/profesores",
+    path: "/pages/profesores",
     title: "Profesores",
   },
   {
-    path: "/nosotros",
+    path: "/pages/nosotros",
     title: "Sobre Nosotros",
   },
 ];

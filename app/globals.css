@@ -91,6 +91,17 @@
     .confetti.triangle {
       clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     }
+    .landingImage {
+      mask-image: linear-gradient(black 80%, transparent);
+    }
+    .rounded-edge {
+  aspect-ratio: 3/2;
+  /* update the 85% to control the curvature
+     you can also update the 50% to control the position
+  */
+  clip-path: ellipse(85% 100% at 50% 0);
+  background: #d4d4d4;
+}
   
     @keyframes fall {
       to {

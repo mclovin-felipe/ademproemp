@@ -9,7 +9,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        dashboard: "bg-primary text-black rounded-full",
+        dashboard: "bg-primary text-white rounded-full",
         dashboardOutline: "border border-dashboard text-white rounded-full",
         unstyled: "",
         default:

@@ -1,15 +1,17 @@
 export interface Profesor {
-  idProfesor: number;
-  nombre: string;
-  apellido: string;
+  id: number;
+  firstName: string;
+  lastName: string;
   email: string;
-  telefono: string;
-  direccion: string;
-  fechaNacimiento: string;
-  profesor: string;
-  calificacion: number;
-  calificaciones: number;
-  imagen: string;
-  descripcion: string;
-  cursos: number;
+  phone: string;
+  rut: string;
+  rolId: number;
+  media: string;
+  createdAt: string;
+}
+
+export interface ProfesoresResponse {
+  data: Profesor[];
+  error: boolean;
+  message: string;
 }

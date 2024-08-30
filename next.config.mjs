@@ -1,22 +1,26 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  async redirects() {
-    return [
-      {
-        source: "/",
-        destination: "/home",
-        permanent: true,
-      },
-    ];
+  reactStrictMode: false,
+  images: {
+    domains: ["matricula-s3.s3.amazonaws.com"],
   },
-  async rewrites() {
-    return [
-      {
-        source: "/:page*",
-        destination: "/public/pages/:page*",
-      },
-    ];
-  },
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: "/",
+  //       destination: "/home",
+  //       permanent: true,
+  //     },
+  //   ];
+  // },
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: "/:page*",
+  //       destination: "/pages/:page*",
+  //     },
+  //   ];
+  // },
 };
 
 export default nextConfig;

@@ -1,15 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
-// import Loading from "./dashboard/loading";
-
+import { useRouter } from "next/navigation";
 const Page = () => {
-  // REDIRECT to /home
-  // useEffect(() => {
-  //   // Redirect to /home
-  //   window.location.href = "/home";
-  // }, []);
-  // return <Loading />;
-  return <div>Home</div>;
+  const router = useRouter();
+  router.push("/pages/home");
+
+  return <></>;
 };
 export default Page;

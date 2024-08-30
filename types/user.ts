@@ -8,8 +8,19 @@ export interface User {
   createdAt: string;
   updatedAt: string;
   rolId: number;
+  media: string;
 }
 
+export interface Alumno {
+  rut: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  phone: string;
+  rolId: number;
+  disabled: boolean;
+}
 export interface UsersResponse {
   data: User[];
   error: boolean;
