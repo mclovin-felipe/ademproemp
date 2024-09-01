@@ -10,6 +10,7 @@ export interface User {
   rolId: number;
   file: any;
   disabled?: boolean;
+  media?: string;
 }
 
 export interface Alumno {

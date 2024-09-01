@@ -2,9 +2,7 @@ import { getCourseById } from "@/app/dashboard/services/course";
 import { getUserByID } from "@/app/dashboard/services/users";
 import { CardProfesor, Header } from "@/app/pages/component";
 import CardGenerica from "@/app/pages/component/CardGenerica";
-import { Button } from "@/components/ui/button";
 import { CursosProps } from "@/types/cursos";
-import { Profesor } from "@/types/profesores";
 import Image from "next/image";
 import { ButtonInscribir } from "./components/buttonInscribir";
 
@@ -16,7 +14,6 @@ const Page = async ({
   };
 }) => {
   const course: CursosProps = await getCourseById(params.id);
-  const Profesor = (await getUserByID(course.rutProfesor)) as Profesor;
   const Days = [
     "Lunes",
     "Martes",

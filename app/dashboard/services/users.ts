@@ -36,7 +36,7 @@ export async function getUsersRol(rol: number): Promise<User[]> {
     if (response.message === "USER_NOT_FOUND") {
       return [];
     }
-    return response.data as User[];
+    return response.data as unknown as User[];
   } catch (error: any) {
     throw Error(error);
   }

@@ -12,6 +12,7 @@ const initialState: User = {
   updatedAt: "",
   rolId: 0,
   media: "",
+  file: "",
 };
 export const userSlice = createSlice({
   name: "user",
