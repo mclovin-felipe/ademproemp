@@ -17,6 +17,8 @@ import { Input } from "@/components/ui/input";
 import InputEdit from "./InputEdit";
 import { inputs } from "./inputs";
 import { Roles } from "../../component/roles";
+import useAxiosInstance from "@/lib/axios";
+import { useToast } from "@/components/ui/use-toast";
 
 export function EditUser({ user }: { user: User }) {
   const {
@@ -34,10 +36,34 @@ export function EditUser({ user }: { user: User }) {
       lastName: user.lastName,
       email: user.email,
       phone: user.phone,
-      rolId: user.rolId,
+      disabled: true,
     },
   });
-  const onSubmit = (data: User) => console.log(data);
+  const axios = useAxiosInstance();
+  const { toast } = useToast();
+  const onSubmit = async (data: User) => {
+    console.log(data);
+    try {
+      const response = await axios.post("/v1/user/update", data);
+      if (response.data.error) {
+        toast({
+          title: "Error",
+          description: response.data.message,
+        });
+      } else {
+        toast({
+          title: "Usuario actualizado",
+          description: "Usuario actualizado con éxito",
+        });
+      }
+    } catch (error) {
+      console.log(error);
+      toast({
+        title: "Error",
+        description: "Ocurrio un error",
+      });
+    }
+  };
 
   return (
     <Dialog>
@@ -53,7 +79,7 @@ export function EditUser({ user }: { user: User }) {
         </DialogHeader>
         {/*  */}
         <form
-          className="grid  gap-y-2 bg-[#191919] rounded-2xl p-2  "
+          className="grid lg:grid-cols-2  gap-y-2 bg-[#191919] rounded-2xl p-2  "
           onSubmit={handleSubmit(onSubmit)}
         >
           {inputs.map((item) => (
@@ -71,7 +97,7 @@ export function EditUser({ user }: { user: User }) {
           <div className="p-2">
             <Roles
               disabled={true}
-              value={watch("rolId").toString()}
+              value={user.rolId.toString()}
               onChange={(id: string) =>
                 setValue("rolId", parseInt(id), {
                   shouldValidate: true,
