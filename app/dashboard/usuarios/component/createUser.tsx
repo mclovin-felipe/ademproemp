@@ -20,12 +20,13 @@ import { inputs } from "./inputs";
 import { Roles } from "../../component/roles";
 import { AddUser } from "../../services/users";
 import React from "react";
+import useAxiosInstance from "@/lib/axios";
 const CreateUser = ({ setChange }: { setChange: any }) => {
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(false);
   const [isOpen, setIsOpen] = React.useState(false);
   const { toast } = useToast();
-
+  const axios = useAxiosInstance();
   const {
     register,
     handleSubmit,
@@ -37,18 +38,29 @@ const CreateUser = ({ setChange }: { setChange: any }) => {
   } = useForm<User>({
     defaultValues: {
       rolId: 1,
-      media: "///",
+      file: "///",
+      disabled: false,
     },
   });
   const onSubmit = (data: User) => {
-    AddUser(data)
+    let dataSubmit = data;
+    let form = new FormData();
+    form.append("file", data.file);
+    delete (dataSubmit as Partial<User>).file;
+    form.append("json", JSON.stringify(dataSubmit));
+    axios
+      .post("/v1/user/create", form, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
       .then((res) => {
         if (res) {
-          if (res.error) {
+          if (res.data.error) {
             setLoading(false);
             toast({
               title: "Error al crear usuario",
-              description: res.message,
+              description: res.data.message,
               duration: 3000,
             });
             // CLOSE DIALOG
@@ -73,7 +85,6 @@ const CreateUser = ({ setChange }: { setChange: any }) => {
         }
       })
       .catch((err) => {
-        // console.log(err, "resssdddds");
         setLoading(false);
         toast({
           title: "Error al crear usuario",
@@ -110,7 +121,6 @@ const CreateUser = ({ setChange }: { setChange: any }) => {
             className="grid grid-cols-2   gap-y-2 bg-[#191919] rounded-2xl p-2"
             onSubmit={handleSubmit(onSubmit)}
           >
-            <input type="hidden" {...register("media")} defaultValue={"/"} />
             {inputs.map((item) => (
               <InputEdit
                 key={item.name}
@@ -133,7 +143,24 @@ const CreateUser = ({ setChange }: { setChange: any }) => {
                 }
               />
             </div>
-
+            <div className="p-2 flex items-start flex-col justify-start">
+              <span className="text-sm">Imagen</span>
+              <label
+                htmlFor="file-upload"
+                className="bg-dashboard   rounded-full w-full h-14 flex items-center px-4 text-white"
+              >
+                Subir imagen
+              </label>
+              <input
+                id="file-upload"
+                type="file"
+                onChange={(e) => {
+                  if (e?.target?.files) {
+                    setValue("file", e.target.files[0]);
+                  }
+                }}
+              />
+            </div>
             <Button
               type="button"
               className="col-span-2"

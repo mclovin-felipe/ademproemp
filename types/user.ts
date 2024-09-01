@@ -8,7 +8,8 @@ export interface User {
   createdAt: string;
   updatedAt: string;
   rolId: number;
-  media: string;
+  file: any;
+  disabled?: boolean;
 }
 
 export interface Alumno {
