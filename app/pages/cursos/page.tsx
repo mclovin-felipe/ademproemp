@@ -17,8 +17,10 @@ const Page = async ({
           <Search />
         </div>
 
-        {course.filter((item: CursosProps) =>
-          item.title.toLowerCase().includes(query.toLowerCase())
+        {course.filter(
+          (item: CursosProps) =>
+            item.title.toLowerCase().includes(query.toLowerCase()) &&
+            item.disabled === false,
         ).length === 0 ? (
           <div className="flex col-span-5 flex-col items-center justify-center w-full gap-y-5 text-center">
             <h1 className="text-4xl font-bold">No hay cursos</h1>
@@ -30,7 +32,7 @@ const Page = async ({
           <div className="col-span-5 grid lg:grid-cols-2 2xl:grid-cols-3 3xl:grid-cols-3 5xl:grid-cols-5 gap-5">
             {course
               .filter((item: CursosProps) =>
-                item.title.toLowerCase().includes(query.toLowerCase())
+                item.title.toLowerCase().includes(query.toLowerCase()),
               )
               .map((item: CursosProps) => (
                 <CardCurso key={item.id} {...item} />

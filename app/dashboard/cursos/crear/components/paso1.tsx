@@ -8,18 +8,12 @@ import { DatePicker } from "@/components/ui/datapicker";
 import { Textarea } from "@/components/ui/textarea";
 import { TimePickerDemo } from "@/components/ui/time-picker-demo";
 import { useEffect, useState } from "react";
-import { format, set } from "date-fns";
 import { useForm } from "react-hook-form";
 import classNames from "classnames";
-import { formatPrice } from "@/lib/utils";
 import { IFSTEP1 } from "@/types/course/steps";
 const Paso1 = ({ setStep, HandlerStep }: Pasos) => {
   const [file, setFile] = useState<any>("");
   const [fileError, setFileError] = useState<boolean>(false);
-  const [errorStartTime, setErrorStartTime] = useState<boolean>(false);
-  const [errorEndTime, setErrorEndTime] = useState<boolean>(false);
-  const [errorStartDate, setErrorStartDate] = useState<boolean>(false);
-  const [errorEndDate, setErrorEndDate] = useState<boolean>(false);
 
   const {
     register,
@@ -34,14 +28,6 @@ const Paso1 = ({ setStep, HandlerStep }: Pasos) => {
       price: 1000,
     },
   });
-
-  const CheckMedia = () => {
-    if (watch("media") === "") {
-      setFileError(true);
-    } else {
-      setFileError(false);
-    }
-  };
 
   useEffect(() => {
     if (watch("media") === "") {
@@ -78,7 +64,7 @@ const Paso1 = ({ setStep, HandlerStep }: Pasos) => {
             "bg-[#282626] w-full col-span-4 lg:col-span-1 rounded-2xl flex flex-col justify-center items-center p-10 lg:p-0 relative",
             {
               "border-red-800 border": fileError,
-            }
+            },
           )}
         >
           {watch("media") !== "" ? (
@@ -157,7 +143,7 @@ const Paso1 = ({ setStep, HandlerStep }: Pasos) => {
                 delta={120000}
                 date={watch("endDate")}
                 minDate={new Date(watch("startDate")).setDate(
-                  new Date(watch("startDate")).getDate() + 1
+                  new Date(watch("startDate")).getDate() + 1,
                 )}
                 setDate={handleDate2}
                 name={"endDate"}

@@ -25,7 +25,7 @@ const Page = async ({
             <div className="flex col-span-5 flex-col items-center justify-center w-full gap-y-5 text-center">
               <h1 className="text-4xl font-bold">No hay noticias</h1>
               <p className="text-gray-600">
-                No hay noticias que coincidan con tu búsqueda
+                No hay  que coincidan con tu búsqueda
               </p>
             </div>
           )}

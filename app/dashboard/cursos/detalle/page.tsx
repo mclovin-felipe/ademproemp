@@ -15,6 +15,7 @@ import { useForm } from "react-hook-form";
 import InputEdit from "./components/inputEdit";
 import useAxiosInstance from "@/lib/axios";
 import { useToast } from "@/components/ui/use-toast";
+import { Switch } from "@/components/ui/switch";
 
 const Page = () => {
   const searchParams = useSearchParams();
@@ -45,6 +46,7 @@ const Page = () => {
       setValue("description", response.description);
       setValue("price", response.price);
       setValue("classesNumber", response.classesNumber);
+      setValue("disabled", response.disabled);
       setValue(
         "startDate",
         conversionDate(response.startDate, response.startTime)
@@ -151,6 +153,18 @@ const Page = () => {
         </InputEdit>
         <InputEdit label="Número de asistentes">
           <Input {...register("classesNumber")} />
+        </InputEdit>
+        <InputEdit label="Estado del curso ">
+          <div className="flex items-center gap-x-2">
+            <Switch
+              checked={!watch("disabled")}
+              onCheckedChange={(e) => {
+                console.log(e);
+                setValue("disabled", !watch("disabled"));
+              }}
+            />
+            <p>{watch("disabled") ? "Inactivo" : "Activo"}</p>
+          </div>
         </InputEdit>
 
         {/* TODOL:PREGUNTARLE A VICENTE */}

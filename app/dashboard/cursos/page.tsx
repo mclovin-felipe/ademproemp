@@ -24,28 +24,18 @@ const Page = async () => {
           </Link>
         </div>
       </div>
-
-      <div className="w-full left-0   max-w-lg text-sm font-medium text-center text-gray-500 border-b border-gray-500 dark:text-gray-400 dark:border-gray-700">
-        <ul className="flex flex-wrap  items-start justify-start ">
-          {/* <Tab
-            active={active === 0}
-            title="Todos los cursos"
-            setActive={setActive}
-            index={0}
-          />
-          <Tab
-            active={active === 1}
-            title="Publicados"
-            setActive={setActive}
-            index={1}
-          />
-          <Tab
-            active={active === 2}
-            title="Draft"
-            setActive={setActive}
-            index={2}
-          /> */}
-        </ul>
+      <div className="w-5/6 flex flex-col gap-y-4">
+        <div className="flex flex-row gap-x-3">
+          <div className="flex flex-row gap-2">
+            <div className="h-6 w-6 rounded-full bg-green-500"></div>
+            <p>Activos</p>
+          </div>
+          <div className="flex flex-row gap-2">
+            <div className="h-6 w-6 rounded-full bg-red-500"></div>
+            <p>Inactivos</p>
+          </div>
+        </div>
+        <div className=" left-0  w-full text-sm font-medium text-center text-gray-500 border-b border-gray-500 dark:text-gray-400 dark:border-gray-700"></div>
       </div>
       <Cursos cursos={data} />
     </div>
