@@ -85,6 +85,7 @@ const Paso1 = ({ setStep, HandlerStep }: Pasos) => {
               <input
                 key={1}
                 type="file"
+                id="file-upload"
                 accept="image/*"
                 className="w-1/2"
                 onChange={(e) => {
