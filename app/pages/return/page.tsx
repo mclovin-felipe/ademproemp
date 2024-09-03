@@ -20,7 +20,7 @@ const Page: React.FC = () => {
 
     const confirmPayment = async () => {
       axios
-        .post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/inscription/create`, {
+        .post(`${process.env.NEXT_PUBLIC_API_BASE_URL}v1/inscription/create`, {
           TToken: token_ws,
         })
         .then((response) => {
