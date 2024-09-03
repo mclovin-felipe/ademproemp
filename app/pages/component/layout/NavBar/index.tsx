@@ -110,7 +110,7 @@ const NavBar = () => {
           {routes.map((route) => (
             <Link
               key={route.path}
-              className="mx-auto  flex flex-col justify-center gap-y-3 items-center"
+              className="mx-auto flex flex-col justify-center gap-y-3 items-center"
               onClick={() => setVisible(false)}
               href={route.path}
             >

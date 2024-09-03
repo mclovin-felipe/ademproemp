@@ -14,6 +14,7 @@ const LinkNav = ({
 }) => {
   const pathname = usePathname();
   const router = useRouter();
+
   return (
     <Button
       // size={"sm"}
@@ -22,7 +23,8 @@ const LinkNav = ({
       className={classNames("shadow-none rounded-full hover:text-primary ", {
         "text-primary": pathname.includes(href),
         "text-white": !action,
-        "bg-white text-primary": !action && pathname.includes(href),
+        "bg-white text-primary":
+          !action && href === "/" ? false : pathname.includes(href),
       })}
       onClick={() => router.push(href)}
     >

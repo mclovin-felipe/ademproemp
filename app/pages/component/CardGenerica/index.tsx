@@ -18,7 +18,8 @@ const CardGenerica = ({
     return text;
   };
   return (
-    <div className="rounded-lg  lg:w-auto bg-card pb-4 flex flex-col gap-y-3 max-w-[400px]  min-h-[26rem]">
+    <div className="rounded-lg   bg-card pb-4  gap-y-3 min-h-[300px] min-w-[200px] flex flex-col">
+      {/* <div className="col-span-2" ></div> */}
       {image === "" ? (
         <User2 />
       ) : (

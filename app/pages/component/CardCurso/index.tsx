@@ -1,14 +1,6 @@
 import { CursosProps } from "@/types/cursos";
-import {
-  TimerIcon,
-  VideoIcon,
-  DownloadIcon,
-  Star,
-  StarHalf,
-  Users,
-} from "lucide-react";
+import { TimerIcon } from "lucide-react";
 import { getUserByID } from "@/app/dashboard/services/users";
-import Link from "next/link";
 import Image from "next/image";
 import { formatPrice } from "@/lib/utils";
 import {
@@ -35,8 +27,29 @@ const CardCurso = async (props: CursosProps) => {
   return (
     <Dialog>
       <DialogTrigger>
-        <div className="flex flex-col  gap-y-3 border-white rounded-lg relative min-h-[25rem] hover:scale-105 transition-transform duration-500  shadow-lg bg-white dark:border-gray-800 group">
-          <Image
+        <div className="flex flex-col  gap-y-3 border-white rounded-lg relative min-h-[25rem] hover:scale-105 transition-transform duration-500  shadow-lg bg-white  dark:border-gray-800 group">
+          <div className="h-52 bg-primary w-full skew-y-12 flex justify-center items-center rounded-tl-lg">
+            <div className="relative h-48 w-48 mx-auto -skew-y-12">
+              <Image
+                src={props.media}
+                alt="profesor"
+                fill
+                className="w-full  object-contain bg-gray-50 rounded-full  "
+              />
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-y-3 mt-12 p-5">
+            <h2 className="text-2xl font-bold">{props.title}</h2>
+            <div className="grid grid-cols-3 justify-between 5xl:gap-x-5 items-center">
+              <div className="w-14 h-14 rounded-full bg-gray-100 drop-shadow-sm relative"></div>
+              <p className="text-md">
+                {user?.firstName} {user?.lastName}
+              </p>
+            </div>
+          </div>
+
+          {/* <Image
             src={props.media}
             alt="profesor"
             fill
@@ -49,20 +62,12 @@ const CardCurso = async (props: CursosProps) => {
             </p>
             <hr />
             <div className="grid grid-cols-3 justify-between 5xl:gap-x-5 items-center">
-              <div className="w-14 h-14 rounded-full bg-gray-100 drop-shadow-sm relative">
-                {/* <Image
-            src={user?.media || ""}
-            alt="profesor"
-            objectFit="cover"
-            fill
-            className="-z-10 rounded-full"
-          /> */}
-              </div>
+              <div className="w-14 h-14 rounded-full bg-gray-100 drop-shadow-sm relative"></div>
               <p className="text-md">
                 {user?.firstName} {user?.lastName}
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </DialogTrigger>
       <DialogContent>
