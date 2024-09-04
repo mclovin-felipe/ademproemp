@@ -1,4 +1,5 @@
 import { User2 } from "lucide-react";
+import Image from "next/image";
 
 const CardGenerica = ({
   title,
@@ -18,21 +19,19 @@ const CardGenerica = ({
     return text;
   };
   return (
-    <div className="rounded-lg   bg-card pb-4  gap-y-3 min-h-[300px] min-w-[200px] flex flex-col">
-      {/* <div className="col-span-2" ></div> */}
-      {image === "" ? (
-        <User2 />
-      ) : (
-        <img
+    <div className="rounded-lg   bg-card   gap-y-3 min-h-[300px] min-w-[200px] grid grid-cols-5 ">
+      <div className="col-span-1 rounded-l-lg bg-primary grid items-center justify-center w-full ">
+        <h1 className="text-white break-words rotate-[270deg] w-[250px] font-semibold ">
+          {title}
+        </h1>
+      </div>
+      <div className="col-span-4 relative">
+        <Image
           src={image}
-          alt="Profesor"
-          className=" rounded-edge rounded-t-lg object-cover"
+          alt="Picture of the author"
+          className="rounded-r-lg"
+          fill
         />
-      )}
-
-      <div className="p-4 break-words">
-        <p className="text-xl text-black font-bold">{title}</p>
-        <p className="text-gray-600 text-md">{ShortText(desc)}</p>
       </div>
     </div>
   );
