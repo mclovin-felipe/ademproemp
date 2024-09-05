@@ -20,7 +20,7 @@ const LinkNav = ({
       // size={"sm"}
       variant={"ghost"}
       // variant={pathname === href ? "secondary" : "default"}
-      className={classNames("shadow-none rounded-full hover:text-primary ", {
+      className={classNames("shadow-none rounded-full hover:text-primary cursor-pointer ", {
         "text-primary": pathname.includes(href),
         "text-white": !action,
         "bg-white text-primary":

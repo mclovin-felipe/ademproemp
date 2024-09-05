@@ -13,6 +13,7 @@ import { Contacto } from "./pages/component";
 import { FrequentQ } from "./pages/component";
 import Professores from "./pages/home/component/profesores";
 import NoNoticia from "./pages/home/component/noNoticia";
+import Noticias from "./pages/home/component/noticias";
 const Page = () => {
   return (
     <main>
@@ -157,21 +158,7 @@ const Page = () => {
             </p>
           </div>
         </div>
-        <div className="bg-blue-50 w-full py-14">
-          <div className="w-5/6 mx-auto flex flex-col gap-y-5 items-start justify-center">
-            {/* <Badge text="Noticias" /> */}
-            <h1 className="text-4xl font-bold">Noticias</h1>
-            <div className="grid lg:grid-cols-2 gap-x-5 h-[650px] w-full">
-            <NoNoticia />
-            <div className="flex flex-col gap-y-5 lg:mt-0 mt-5">
-            <NoNoticia />
-
-            <NoNoticia />
-
-              </div>
-            </div>
-          </div>
-        </div>
+       <Noticias />
       </div>
       <Footer />
     </main>
