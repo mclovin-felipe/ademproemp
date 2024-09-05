@@ -12,6 +12,7 @@ import Cursos from "./pages/home/component/cursos";
 import { Contacto } from "./pages/component";
 import { FrequentQ } from "./pages/component";
 import Professores from "./pages/home/component/profesores";
+import NoNoticia from "./pages/home/component/noNoticia";
 const Page = () => {
   return (
     <main>
@@ -161,10 +162,12 @@ const Page = () => {
             {/* <Badge text="Noticias" /> */}
             <h1 className="text-4xl font-bold">Noticias</h1>
             <div className="grid lg:grid-cols-2 gap-x-5 h-[650px] w-full">
-              <div className="h-full w-full bg-gray-300 rounded-lg"></div>
-              <div className="flex flex-col gap-y-5 lg:mt-0 mt-5">
-                <div className="flex flex-row gap-x-3 h-full bg-gray-300 rounded-lg w-full"></div>
-                <div className="flex flex-row gap-x-3 h-full bg-gray-300 rounded-lg w-full"></div>
+            <NoNoticia />
+            <div className="flex flex-col gap-y-5 lg:mt-0 mt-5">
+            <NoNoticia />
+
+            <NoNoticia />
+
               </div>
             </div>
           </div>

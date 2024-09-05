@@ -42,7 +42,14 @@ const CardCurso = async (props: CursosProps) => {
           <div className="flex flex-col gap-y-3 mt-12 p-5">
             <h2 className="text-2xl font-bold">{props.title}</h2>
             <div className="grid grid-cols-3 justify-between 5xl:gap-x-5 items-center">
-              <div className="w-14 h-14 rounded-full bg-gray-100 drop-shadow-sm relative"></div>
+              <div className="w-14 h-14 rounded-full bg-gray-100 drop-shadow-sm relative">
+                <Image 
+                  src={user?.media as string}
+                  alt="profesor"
+                  fill
+                  className="w-full  object-cover rounded-full  "
+                  />
+              </div>
               <p className="text-md">
                 {user?.firstName} {user?.lastName}
               </p>
@@ -73,22 +80,22 @@ const CardCurso = async (props: CursosProps) => {
       <DialogContent>
         <DialogHeader>
           <DialogTitle className="text-5xl my-5">{props.title}</DialogTitle>
-          <DialogDescription className="flex flex-col lg:flex-row gap-y-5">
+          <DialogDescription className="flex flex-col lg:flex-row gap-y-2 lg:gap-y-5">
             <Image
               src={props.media}
               alt="profesor"
-              width={200}
-              height={200}
-              className="w-full lg:h-full object-contain rounded-lg"
+              width={400}
+              height={400}
+              className="w object-contain rounded-lg"
             />
-            <div className=" grid grid-cols-2 lg:flex lg:flex-col min-w-96 p-5 gap-y-4">
+            <div className=" flex flex-col min-w-96 p-5 gap-y-4">
               <p className="col-span-2 w-full">
                 {props.description} Lorem ipsum dolor sit amet consectetur
                 adipisicing elit. Natus ullam voluptatem ex ducimus. Molestias
                 minima, odio doloremque dolorem culpa deleniti repellendus error
                 sapiente nobis, inventore quas laudantium. Nostrum, ad earum!
               </p>
-              <div className="w-1/2 bg-gray-100 h-1 rounded-full"></div>
+              <div className="lg:w-1/2 bg-gray-100 h-1 rounded-full"></div>
               <h1 className="font-semibold">Profesor</h1>
               <div>
                 <p>
@@ -97,14 +104,14 @@ const CardCurso = async (props: CursosProps) => {
                 <p>{user?.email}</p>
               </div>
               <h1 className="font-semibold ">Horario</h1>
-              <div className="flex flex-row items-center">
+              <div className="flex flex-row items-center mx-auto lg:ml-0">
                 <TimerIcon className="w-5 h-5" />
                 <p>
                   {props.startTime} - {props.endTime}
                 </p>
               </div>
               <h1 className="font-semibold">Dias de la semana</h1>
-              <div className="flex flex-row gap-x-2">
+              <div className="flex flex-row gap-x-2 mx-auto lg:ml-0">
                 {props.days.map((day, index) => (
                   <p key={index}>{days[day]}</p>
                 ))}

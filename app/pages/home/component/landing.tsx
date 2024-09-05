@@ -17,13 +17,18 @@ const Landing = () => {
             nam nisi inventore esse deserunt corporis.
           </p>
           <div className="flex gap-x-5 justify-start animate-fadeIn">
+            <Link href={'/pages/nosotros'}>
+            
+            
             <Button size={"lg"} className="shadow-lg h-12 rounded-full">
               <span className="text-background">
                 <ArrowRight />
               </span>
               Ver más
             </Button>
-            <Link href="/cursos">
+            </Link>
+
+            <Link href="/pages/cursos">
               <Button
                 variant={"outline"}
                 size={"lg"}

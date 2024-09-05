@@ -115,7 +115,7 @@ const Paso1 = ({ setStep, HandlerStep }: Pasos) => {
 
           <div className="grid grid-cols-2 gap-5">
             <div className="col-span-2">
-              <span>Categoria de curso</span>
+              <span>Titulo de curso</span>
               <InputCurso>
                 <Input
                   {...register("title", {

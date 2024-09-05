@@ -1,60 +1,81 @@
-import { Facebook, Instagram, Twitter } from "lucide-react";
+'use client'
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
 import { Header } from "../component";
+import {useForm} from "react-hook-form";
+import { Button } from "@/components/ui/button";
+import { SendContact } from "@/services/contact";
+import { useToast } from "@/components/ui/use-toast";
+import { useState } from "react";
+import { Check } from "lucide-react";
 const Page = () => {
+  const {
+    register, handleSubmit, reset, watch, formState: { errors }
+  }= useForm<IFormInput>();
+  interface IFormInput {
+    name: string;
+    lastname: string;
+    email: string;
+  }
+  const [loading, setLoading] = useState(false)
+  const {toast} = useToast()
+  const onSubmit = async(data: any) => {
+    try {
+      console.log(data);
+      const response = await SendContact({
+        to: data.email,
+        subject: "Mensaje de contacto",
+        templateId: 1,
+        firstName: data.name + " " + data.lastname,
+      });
+      if(response.error){
+        throw response.error
+      }
+      setLoading(true)
+      reset()
+      toast({
+        title: "Mensaje enviado",
+        description: "Gracias por contactarnos",
+      })
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Hubo un error al enviar el mensaje",
+      })
+      console.log(error);
+      
+    }
+  }
   return (
-    <main className={""}>
+    <main className={"pb-14"}>
       <Header title="Contacto" />
-      <div className="grid lg:mt-14 lg:grid-cols-5 bg-adem lg:w-4/6 mx-auto rounded-lg border 5xl:max-w-[80vh] bg-card">
-        <div className="hidden col-span-2 lg:flex text-center bg-white relative">
-          <img src="/laptop-table.jpg" className="w-full object-cover" />
-        </div>
-        <div className="col-span-3 flex flex-col justify-between p-10 min-h-[50vh]">
-          {/* <Badge text={"Contactanos"} /> */}
-          <h1 className="text-4xl font-bold text-gray-600 ">
-            Formulario de contacto
-          </h1>
-          <div className="flex flex-row justify-between gap-x-5">
-            <Input
-              type="text"
-              className="w-full p-3 rounded-lg"
-              placeholder="Nombre"
-            />
-            <Input
-              type="text"
-              className="w-full p-3 rounded-lg"
-              placeholder="Apellido"
-            />
-          </div>
-          <Input
-            type="text"
-            className="w-full p-3 rounded-lg"
-            placeholder="Email"
-          />
-          <Textarea
-            className="w-full p-3 rounded-lg"
-            placeholder="Mensaje"
-          ></Textarea>
-          <Button className=" text-white rounded-lg ">Enviar</Button>
-        </div>
+      {loading &&   <div className="flex flex-col justify-center  animate-fadeIn items-center animation-FadeIn mt-14 w-4/6 mx-auto gap-10 rounded-2xl bg-gray-50 p-14" >
+        <h1 className="text-4xl font-semibold">Gracias por contactarnos </h1>
+        <Check size={100} className="text-primary"/>
+      </div>}
+    
+ 
+      {!loading &&<div className="grid grid-cols-2 mt-14 w-4/6 mx-auto gap-10 rounded-2xl bg-gray-50 p-14" >
+      <div className="col-span-2">
+      <h1 className=" text-4xl font-semibold">Envianos un mensaje</h1>
+      <p className=" ">y te responderemos a la brevedad</p>
       </div>
+       
+        <div><Input value={watch("name")}  type="text" placeholder="Nombre" {...register("name", { required: true })} />
+        {errors.name && <span>Este campo es requerido</span>}</div>
+        <div>
 
-      <div className="flex flex-col gap-y-7 w-full lg:flex-row justify-between lg:w-4/6 mx-auto mt-14">
-        <div className="flex flex-row justify-between border text-4xl items-center py-5 px-10 rounded-lg">
-          <Facebook name="mdi:facebook" className={"h-16 w-16"} />
-          <p>Facebook</p>
+        <Input type="text" value={watch("lastname")} placeholder="Apellido" {...register("lastname", { required: true })} />
+        {errors.lastname && <span>Este campo es requerido</span>}
         </div>
-        <div className="flex flex-row border justify-between text-4xl items-center py-5 px-10 rounded-lg">
-          <Instagram name="mdi:instagram" className={"h-16 w-16"} />
-          <p>Instagram</p>
+        <div>
+        <Input type="email" placeholder="Email" value={watch("email")} {...register("email", { required: true })} />
+        {errors.lastname && <span>Este campo es requerido</span>}
         </div>
-        <div className="flex flex-row border justify-between text-4xl items-center py-5 px-10 rounded-lg">
-          <Twitter name="mdi:twitter" className={"h-16 w-16"} />
-          <p>Twitter</p>
-        </div>
-      </div>
+       
+
+        <Button className="col-span-2 mx-auto"  onClick={handleSubmit(onSubmit)} size={'lg'}>Enviar </Button>
+      </div> }
+     
     </main>
   );
 };

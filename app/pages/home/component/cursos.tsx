@@ -14,7 +14,7 @@ const Cursos = () => {
     <div className="  mx-auto w-5/6 scroll">
       <Carousel
         slides={course.slice(0, 3).map((item) => (
-          <Link href={`/pages/cursos/${item.id}`} key={item.id}>
+          <Link href={`/pages/cursos`} key={item.id}>
             <CardGenerica
               key={item.id}
               title={item.title}

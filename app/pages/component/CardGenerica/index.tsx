@@ -29,7 +29,7 @@ const CardGenerica = ({
         <Image
           src={image}
           alt="Picture of the author"
-          className="rounded-r-lg"
+          className="rounded-r-lg object-cover"
           fill
         />
       </div>
