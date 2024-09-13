@@ -12,6 +12,7 @@ export async function getNewsById(id: string): Promise<Article> {
   try {
     const response = await getArticleById(id);
     return response.data;
+    // ajSHGA
   } catch (error: any) {
     throw Error(error);
   }

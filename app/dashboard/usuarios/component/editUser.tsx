@@ -1,5 +1,4 @@
 import { Copy } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -19,6 +18,7 @@ import { inputs } from "./inputs";
 import { Roles } from "../../component/roles";
 import useAxiosInstance from "@/lib/axios";
 import { useToast } from "@/components/ui/use-toast";
+import { RevalidateDashboard } from "@/services/revalidate";
 
 export function EditUser({ user }: { user: User }) {
   const {
@@ -55,6 +55,9 @@ export function EditUser({ user }: { user: User }) {
           title: "Usuario actualizado",
           description: "Usuario actualizado con éxito",
         });
+        setTimeout(() => {
+          location.reload();
+        }, 1000);
       }
     } catch (error) {
       console.log(error);

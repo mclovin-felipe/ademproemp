@@ -9,6 +9,7 @@ import { getCourses } from "../services/course";
 import { useEffect } from "react";
 import Loading from "../loading";
 import Link from "next/link";
+import InscribirUsuario from "../component/usuarios/inscribir";
 
 const Page = async () => {
   const data = await getCourses();
@@ -18,10 +19,11 @@ const Page = async () => {
       <div className="flex flex-row justify-between items-center w-full">
         <h1 className="text-4xl font-semibold">Cursos</h1>
 
-        <div>
+        <div className="flex flex-row gap-x-2">
           <Link href="/dashboard/cursos/crear">
-            <Button className="rounded-full text-black">Crear un curso</Button>
+            <Button className="rounded-full ">Crear un curso</Button>
           </Link>
+          <InscribirUsuario />
         </div>
       </div>
       <div className="w-5/6 flex flex-col gap-y-4">

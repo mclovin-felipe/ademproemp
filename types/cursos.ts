@@ -29,3 +29,17 @@ export interface CategoryResponse {
   message: string;
   data: Category[];
 }
+
+export interface DataItem {
+  id: number;
+  created_at: string;
+  updated_at: string;
+  course_id: number;
+  user_id: string;
+  disabled: boolean;
+}
+
+export interface ClassifiedData {
+  month: string; // Formato: "YYYY-MM"
+  count: number;
+}

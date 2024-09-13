@@ -11,7 +11,13 @@ import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { useAppDispatch } from "@/hooks/hook";
 import { setUser, setRut } from "@/redux/slices/user";
-const CheckUser = ({ setStep }: { setStep: any }) => {
+const CheckUser = ({
+  setStep,
+  dashboard = false,
+}: {
+  setStep: any;
+  dashboard?: boolean;
+}) => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const { toast } = useToast();
@@ -65,8 +71,10 @@ const CheckUser = ({ setStep }: { setStep: any }) => {
   };
   return (
     <div className="animate-fadeIn flex flex-col gap-y-3 mt-5">
-      <h1 className="text-2xl font-semibold">Antes de comprar</h1>
-      <p>Por favor indicanos tu rut</p>
+      {!dashboard && (
+        <h1 className="text-2xl font-semibold">Antes de comprar</h1>
+      )}
+      {!dashboard && <p>Por favor indicanos tu rut</p>}
       <InputCompra label="RUT">
         <Input
           className={classNames("border ", {
@@ -92,9 +100,11 @@ const CheckUser = ({ setStep }: { setStep: any }) => {
         <p>{errors.rut?.message}</p>
       </InputCompra>
       <Button onClick={handleSubmit(onSubmit)}>Buscar</Button>
-      <Button variant={"outline"} onClick={() => router.back()}>
-        Volver
-      </Button>
+      {!dashboard && (
+        <Button variant={"outline"} onClick={() => router.back()}>
+          Volver
+        </Button>
+      )}
     </div>
   );
 };

@@ -9,7 +9,13 @@ import { createAlumno, getAlumno } from "@/services/users";
 import { useToast } from "@/components/ui/use-toast";
 import { useAppDispatch, useAppSelector } from "@/hooks/hook";
 import { setUser } from "@/redux/slices/user";
-const CreateUser = ({ setStep }: { setStep: any }) => {
+const CreateUser = ({
+  setStep,
+  dashboard = false,
+}: {
+  setStep: any;
+  dashboard?: boolean;
+}) => {
   const { toast } = useToast();
   const dispatch = useAppDispatch();
   const user = useAppSelector((state) => state.user);
@@ -61,8 +67,11 @@ const CreateUser = ({ setStep }: { setStep: any }) => {
   };
   return (
     <div className="animate-fadeIn">
-      <h1 className="text-2xl font-semibold">Antes de comprar</h1>
-      <p>Te pediremos algunos datos personales</p>
+      {!dashboard && (
+        <h1 className="text-2xl font-semibold">Antes de comprar</h1>
+      )}
+      {!dashboard && <p>Te pediremos algunos datos personales</p>}
+
       <div className="grid lg:grid-cols-2 gap-5 mt-5 ">
         <InputCompra label="RUT">
           <Input

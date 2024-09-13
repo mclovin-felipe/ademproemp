@@ -1,5 +1,19 @@
-import { getAllCategories, addCourse, getAllCourses } from "@/services/course";
+import {
+  getAllCategories,
+  addCourse,
+  getAllCourses,
+  getAllInscriptions,
+} from "@/services/course";
 import { Category, CursosProps } from "@/types/cursos";
+export async function getInscription(): Promise<any> {
+  try {
+    const response = await getAllInscriptions();
+    console.log(response);
+    return response.data;
+  } catch (error: Error | any) {
+    throw Error(error);
+  }
+}
 export async function getCourses(): Promise<any> {
   try {
     const response = await getAllCourses();

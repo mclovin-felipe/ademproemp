@@ -7,9 +7,8 @@ import { User } from "@/types/user";
 import { getAllUsers } from "@/services/users";
 import CreateUser from "./component/createUser";
 
-
 const Page = () => {
-  const [rol, setRol] = React.useState("1");
+  const [rol, setRol] = React.useState("0");
   const [data, setData] = useState<User[]>([]);
   const [filter, setFilter] = React.useState<User[]>([]);
   const [change, setChange] = React.useState(false);

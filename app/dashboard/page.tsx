@@ -9,7 +9,7 @@ import {
   MenubarShortcut,
   MenubarTrigger,
 } from "@/components/ui/menubar";
-import { getCourses } from "./services/course";
+import { getCourses, getInscription } from "./services/course";
 import { DataTable } from "./component/DataTable/data-table";
 import { usersColumns } from "./component/DataTable/columns";
 import Chart from "./component/chart";
@@ -17,9 +17,11 @@ import { getUsers } from "./services/users";
 import KPI from "./component/KPI";
 import Link from "next/link";
 import Logout from "./component/logout";
+import { classifyByMonth } from "@/lib/utils";
 const Page = async () => {
   const data = await getUsers();
   const courses = await getCourses();
+  const inscriptions = await getInscription();
   return (
     <div className="flex flex-col justify-start gap-y-5 items-center p-14">
       <div className="grid lg:grid-cols-3">
@@ -63,8 +65,8 @@ const Page = async () => {
           icon={<Users color="black" size={20} />}
         />
       </div>
-      <Chart />
-      <div className="w-5/6 p-5 rounded-2xl bg-[#191919]">
+      <Chart inscriptions={classifyByMonth(inscriptions)} />
+      <div className="w-5/6 mt-5 p-5 rounded-2xl bg-[#191919]">
         <DataTable columns={usersColumns} sizePage={5} data={data} />
       </div>
     </div>

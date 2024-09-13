@@ -1,65 +1,50 @@
 "use client";
+import { ClassifiedData } from "@/types/cursos";
 import { X } from "lucide-react";
 import React, { PureComponent } from "react";
-import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis } from "recharts";
+import {
+  BarChart,
+  Bar,
+  ResponsiveContainer,
+  XAxis,
+  YAxis,
+  LabelList,
+  Legend,
+  Line,
+  Label,
+} from "recharts";
 
-const data = [
-  {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    name: "Page B",
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    name: "Page C",
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    name: "Page D",
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    name: "Page E",
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: "Page F",
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: "Page G",
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-];
-
-const Chart = () => {
+const Chart = ({ inscriptions }: { inscriptions: ClassifiedData[] }) => {
+  console.log(inscriptions);
   return (
-    <BarChart width={500} height={250} data={data}>
+    <BarChart width={800} height={250} data={inscriptions}>
       <Bar
-        dataKey="uv"
+        dataKey="count"
         fill="#fff"
         isAnimationActive
         style={{
           borderRadius: 10,
         }}
       />
-      <XAxis dataKey="name" />
+      <XAxis dataKey="month"></XAxis>
+      <Legend
+        verticalAlign="top"
+        height={36}
+        payload={[
+          {
+            value: "N de inscripciones / mes",
+            type: "square",
+            id: "count",
+          },
+        ]}
+      />
+      <YAxis></YAxis>
+      <Line
+        name="pv of pages"
+        type="monotone"
+        dataKey="count"
+        stroke="#8884d8"
+      />
     </BarChart>
   );
 };

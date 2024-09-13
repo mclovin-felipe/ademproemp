@@ -10,7 +10,7 @@ import { getNewsById } from "../../../services/news";
 import { Article } from "@/types/news";
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
-import axios from "axios";
+import useAxiosInstance from "@/lib/axios";
 const Page = ({
   params,
 }: {
@@ -20,6 +20,7 @@ const Page = ({
 }) => {
   //   const [value, setValue] = useState("");
   const [news, setNews] = useState<Article>();
+  const axios = useAxiosInstance();
   const { toast } = useToast();
   const {
     register,
@@ -53,7 +54,7 @@ const Page = ({
   };
   const onSubmit = async (data: Article) => {
     try {
-      const response = await axios.post("/api/news/update", data);
+      const response = await axios.post("/v1/news/update", data);
       console.log(response);
       if (response.data.error) {
         toast({
