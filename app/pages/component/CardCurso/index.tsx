@@ -27,7 +27,7 @@ const CardCurso = async (props: CursosProps) => {
   return (
     <Dialog>
       <DialogTrigger>
-        <div className="flex flex-col  gap-y-3 border-white rounded-lg relative min-h-[25rem] hover:scale-105 transition-transform duration-500  shadow-lg bg-white  dark:border-gray-800 group">
+        <div className="flex flex-col  gap-y-3 border-white rounded-lg relative min-h-[28rem] hover:scale-105 transition-transform duration-500  shadow-lg bg-white  dark:border-gray-800 group">
           <div className="h-52 bg-primary w-full skew-y-12 flex justify-center items-center rounded-tl-lg">
             <div className="relative h-48 w-48 mx-auto -skew-y-12">
               <Image
@@ -43,12 +43,12 @@ const CardCurso = async (props: CursosProps) => {
             <h2 className="text-2xl font-bold">{props.title}</h2>
             <div className="grid grid-cols-3 justify-between 5xl:gap-x-5 items-center">
               <div className="w-14 h-14 rounded-full bg-gray-100 drop-shadow-sm relative">
-                <Image 
+                <Image
                   src={user?.media as string}
                   alt="profesor"
                   fill
                   className="w-full  object-cover rounded-full  "
-                  />
+                />
               </div>
               <p className="text-md">
                 {user?.firstName} {user?.lastName}
@@ -89,12 +89,7 @@ const CardCurso = async (props: CursosProps) => {
               className="w object-contain rounded-lg"
             />
             <div className=" flex flex-col min-w-96 p-5 gap-y-4">
-              <p className="col-span-2 w-full">
-                {props.description} Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Natus ullam voluptatem ex ducimus. Molestias
-                minima, odio doloremque dolorem culpa deleniti repellendus error
-                sapiente nobis, inventore quas laudantium. Nostrum, ad earum!
-              </p>
+              <p className="col-span-2 w-full">{props.description}</p>
               <div className="lg:w-1/2 bg-gray-100 h-1 rounded-full"></div>
               <h1 className="font-semibold">Profesor</h1>
               <div>
