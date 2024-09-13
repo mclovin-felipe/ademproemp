@@ -17,10 +17,13 @@ const Page = () => {
   const [step, setStep] = useState(0);
   const router = useRouter();
   const axios = useAxiosInstance();
+  const [loading, setLoading] = useState<boolean>(false);
+
   const HandlerStep = (step: number) => {
     setStep(step);
   };
   const onSubmit = (data: CursosProps) => {
+    setLoading(true);
     // CREATE A FORMDATA OBJECT
     let form = new FormData();
     // ADD MEDIA TO FORMDATA
@@ -58,6 +61,9 @@ const Page = () => {
       })
       .catch((err) => {
         console.log(err, "errorrr");
+      })
+      .finally(() => {
+        setLoading(false);
       });
     // axios
     //   .post("/api/course/addCourse", newData)
@@ -134,6 +140,7 @@ const Page = () => {
           <Paso3
             HandlerStep={HandlerStep}
             watch={getValues}
+            loading={loading}
             handleSubmit={handleSubmit(onSubmit)}
           />
         )}

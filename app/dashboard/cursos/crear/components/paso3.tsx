@@ -22,10 +22,12 @@ const Paso3 = ({
   HandlerStep,
   watch,
   handleSubmit,
+  loading,
 }: {
   HandlerStep: (step: number) => void;
   watch: any;
   handleSubmit: any;
+  loading: boolean;
 }) => {
   const axios = useAxiosInstance();
   const [profesor, setProfesor] = useState<Profesor | null>(null);
@@ -158,6 +160,7 @@ const Paso3 = ({
           onClick={() => handleSubmit()}
           size={"lg"}
           type="button"
+          disabled={loading}
           variant={"dashboard"}
         >
           Continuar
