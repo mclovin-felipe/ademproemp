@@ -115,7 +115,7 @@ const Page = () => {
       <div className="flex flex-row items-center relative w-5/6 mx-auto bg-gray-100 rounded-xl p-5 drop-shadow-md">
         <Image
           src={curso.media}
-          className="object-contain rounded-full"
+          className="object-contain rounded-full h-52 w-52 bg-gray-300"
           alt="curso"
           width={200}
           height={200}
