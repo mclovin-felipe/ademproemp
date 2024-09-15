@@ -120,7 +120,7 @@ const NavBar = () => {
                 variant={"link"}
                 size={"icon"}
               >
-                <User2 className="text-white" />
+                <route.icon color={"white"} />
               </Button>
               <p className="text-sm text-gray-500 animate-fadeIn ">
                 {route.title}
@@ -135,9 +135,9 @@ const NavBar = () => {
             hidden: !visible,
           })}
         >
-          <p className="text-sm text-gray-500 animate-fadeIn ">
-            Todos los derechos reservados
-          </p>
+          <h1>Todos los derechos reservados</h1>
+          <h1>Copyright © {new Date().getFullYear()}</h1>
+          <h1>Terminos de uso</h1>
         </div>
       </div>
     </nav>

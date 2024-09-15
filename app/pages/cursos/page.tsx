@@ -29,7 +29,7 @@ const Page = async ({
             </p>
           </div>
         ) : (
-          <div className="col-span-5 grid lg:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-4 5xl:grid-cols-6 mt-10 gap-16">
+          <div className="col-span-5 grid lg:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-4 5xl:grid-cols-4 mt-10 gap-16">
             {course
               .filter((item: CursosProps) =>
                 item.title.toLowerCase().includes(query.toLowerCase())

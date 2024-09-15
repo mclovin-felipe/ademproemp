@@ -3,4 +3,5 @@ export interface Route {
   title: string;
   subRoutes?: Route[];
   description?: string;
+  icon: any;
 }

@@ -14,7 +14,7 @@ const Footer = () => {
             soluta amet, atque et, assumenda autem necessitatibus fugit quod id
             eligendi?
           </h2>
-          <Link href="/contacto" className="w-full">
+          <Link href="/pages/contacto" className="w-full">
             <Button className=" h-14 px-4 w-full rounded-lg">
               <PhoneCall className="mr-2" />
               Contactanos

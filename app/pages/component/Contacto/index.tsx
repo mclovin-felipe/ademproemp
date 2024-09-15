@@ -13,7 +13,7 @@ const Contacto = () => {
           </h1>
           <p className="text-4xl font-bold">Necesitas ayuda?</p>
         </div>
-        <Link href={"/contacto"}>
+        <Link href={"/pages/contacto"}>
           <Button size={"lg"} className=" h-14  rounded-lg">
             Contactanos
           </Button>
