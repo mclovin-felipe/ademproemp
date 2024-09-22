@@ -20,12 +20,15 @@ const LinkNav = ({
       // size={"sm"}
       variant={"ghost"}
       // variant={pathname === href ? "secondary" : "default"}
-      className={classNames("shadow-none rounded-full hover:text-primary cursor-pointer ", {
-        "text-primary": pathname.includes(href),
-        "text-white": !action,
-        "bg-white text-primary":
-          !action && href === "/" ? false : pathname.includes(href),
-      })}
+      className={classNames(
+        "shadow-none rounded-full hover:text-primary cursor-pointer ",
+        {
+          "text-primary": pathname.includes(href) && href !== "/",
+          "text-white": !action,
+          // "bg-white text-primary":
+          //   !action && href === "/" ? false : pathname.includes(href),
+        }
+      )}
       onClick={() => router.push(href)}
     >
       {title}
