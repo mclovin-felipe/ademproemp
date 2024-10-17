@@ -10,22 +10,20 @@ const Landing = () => {
         <div className="flex flex-col gap-y-5">
           <h1 className="text-7xl font-bold text-black dark:text-white">
             Ahora es mas fácil{" "}
-            <span className="text-primary">estudiar online</span>
+            <span className="text-primary">acceder a tus cursos</span>
           </h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius saepe
-            nam nisi inventore esse deserunt corporis.
+            Encuentra el curso perfecto para ti y comienza a mejorar tus
+            habilidades desde hoy.
           </p>
           <div className="flex gap-x-5 justify-start animate-fadeIn">
-            <Link href={'/pages/nosotros'}>
-            
-            
-            <Button size={"lg"} className="shadow-lg h-12 rounded-full">
-              <span className="text-background">
-                <ArrowRight />
-              </span>
-              Ver más
-            </Button>
+            <Link href={"/pages/nosotros"}>
+              <Button size={"lg"} className="shadow-lg h-12 rounded-full">
+                <span className="text-background">
+                  <ArrowRight />
+                </span>
+                Ver más
+              </Button>
             </Link>
 
             <Link href="/pages/cursos">

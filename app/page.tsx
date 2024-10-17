@@ -26,27 +26,27 @@ const Page = () => {
           <Carousel
             slides={[
               <Card
-                title="Feature-01"
-                subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias placeat nihil a itaque minus quidem."
+                title="Compromiso con la calidad"
+                subtitle="Nos dedicamos a ofrecer una formación de excelencia, guiados por profesionales calificados que garantizan un aprendizaje efectivo."
                 image="/profesor.png"
                 link="https://www.google.com"
               />,
               <Card
-                title="Feature-01"
-                subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias placeat nihil a itaque minus quidem."
+                title="	Atención personalizada"
+                subtitle="Cada estudiante es importante para nosotros. Ofrecemos un acompañamiento cercano y personalizado en cada etapa de su formación."
                 image="/profesor.png"
                 link="https://www.google.com"
               />,
               <Card
-                title="Feature-01"
-                subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias placeat nihil a itaque minus quidem."
+                title="Certificaciones reconocidas"
+                subtitle="Nuestra misión es que obtengas certificaciones que te abran puertas en el mundo laboral, respaldadas por las mejores instituciones."
                 image="/profesor.png"
                 link="https://www.google.com"
               />,
             ]}
           />
         </div>
-        <div className="grid h-auto lg:grid-cols-2 w-5/6 mx-auto items-center gap-y-6 gap-x-10 max-h-[55rem]">
+        <div className="grid h-auto lg:grid-cols-2 w-5/6 mx-auto items-center gap-y-6 gap-x-10 py-5 min-h-[40rem]">
           <div className="h-full w-full relative">
             <Image
               src="/symbols-come-out-bulb-top-book.jpg"
@@ -58,20 +58,10 @@ const Page = () => {
           <div className="p-4 gap-y-5 flex flex-col">
             {/* <Badge text="Sobre nosotros" /> */}
             <p className="text-gray-600 text-4xl lg:text-7xl font-extrabold ">
-              Nosotros nos <span className="text-primary">enfocamos</span> y
-              ofrecemos su plataforma educativa.
+              Nos <span className="text-primary">enfocamos</span> y en tu
+              crecimiento y éxito profesional.
             </p>
 
-            <Nostros
-              src="/profesor.png"
-              title="feature-01"
-              desc="Lorem ipsum dolor sit amet."
-            />
-            <Nostros
-              src="/profesor.png"
-              title="feature-01"
-              desc="Lorem ipsum dolor sit amet."
-            />
             <a
               href="https://www.google.com"
               className="flex flex-row items-center gap-x-3 bg-adem lg:w-1/3 xl:w-1/2 justify-center rounded-lg py-2 px-4 text-white font-bold cursor-pointer"
@@ -87,7 +77,7 @@ const Page = () => {
           <Cursos />
         </div>
         <Contacto />
-        <div className="grid lg:grid-cols-2 w-5/6 mx-auto items-center gap-y-6 gap-x-10 min-h-[50vh] ">
+        <div className="grid lg:grid-cols-2 w-5/6 mx-auto items-center my-5 gap-y-6 gap-x-10 min-h-[50vh] ">
           <div className="p-4 gap-y-5 flex flex-col h-full">
             {/* <Badge text="Por qué elegirnos?" /> */}
             <h1 className="text-4xl font-bold">Preguntas frecuentes</h1>
@@ -97,21 +87,21 @@ const Page = () => {
               accusamus adipisci! Exercitationem nihil mollitia dicta non sit
               adipisci officiis saepe laudantium possimus.
             </p>
-            <div className="mx-auto grid gap-y-5 w-full">
+            <div className="mx-auto grid gap-y-5 w-full ">
               <FrequentQ
                 id="1"
-                title="Pregunta prubea 1"
-                desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius dolor pariatur numquam! Nesciunt voluptate assumenda, modi magni accusamus adipisci! Exercitationem nihil mollitia dicta non sit adipisci officiis saepe laudantium possimus."
+                title="¿Cómo puedo inscribirme en uno de los cursos?"
+                desc="Para inscribirte en cualquiera de nuestros cursos, simplemente visita la página de “ Cursos”, selecciona el curso de tu interés y sigue los pasos indicados para realizar la compra. Una vez confirmado el pago, recibirás un correo con toda la información necesaria para comenzar."
               />
               <FrequentQ
                 id="2"
-                title="Pregunta prubea 1"
-                desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius dolor pariatur numquam! Nesciunt voluptate assumenda, modi magni accusamus adipisci! Exercitationem nihil mollitia dicta non sit adipisci officiis saepe laudantium possimus."
+                title="¿Puedo comprar los cursos de manera presencial?"
+                desc="Sí, puedes comprar nuestros cursos de manera presencial en nuestras oficinas. Solo debes acercarte a nuestras instalaciones, donde te brindaremos toda la información necesaria y podrás realizar el pago en efectivo o mediante otros métodos disponibles."
               />
               <FrequentQ
                 id="3"
-                title="Pregunta prubea 1"
-                desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius dolor pariatur numquam! Nesciunt voluptate assumenda, modi magni accusamus adipisci! Exercitationem nihil mollitia dicta non sit adipisci officiis saepe laudantium possimus."
+                title="¿Qué métodos de pago aceptan?"
+                desc="Aceptamos diferentes métodos de pago, incluyendo tarjetas de crédito, débito y transferencias bancarias. También trabajamos con plataformas de pago seguras para garantizar la protección de tus datos."
               />
             </div>
           </div>
@@ -145,20 +135,21 @@ const Page = () => {
             <div className={"flex flex-row gap-x-3"}>
               <div className="w-14 h-14 object-contain rounded-full border-2"></div>
               <div className="flex flex-col gap-y-1">
-                <p className="">Felipe Ponce</p>
-                <p>Estudiante</p>
+                <p className="">Camila Reyes</p>
+                <p>Técnico en Electricidad</p>
               </div>
             </div>
 
             <p className="italic">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit,
-              incidunt reprehenderit nobis ipsum repellendus eligendi vero
-              molestias mollitia ullam nesciunt doloremque exercitationem
-              corrupti iure delectus. Culpa quis ipsam enim porro.
+              Gracias a los cursos que compré aquí, logré obtener mi
+              certificación SEC en tiempo récord. La calidad del contenido es
+              excelente, y el apoyo de los instructores fue fundamental. Sin
+              duda, recomiendo este sitio para cualquiera que quiera mejorar sus
+              oportunidades laborales.
             </p>
           </div>
         </div>
-       <Noticias />
+        <Noticias />
       </div>
       <Footer />
     </main>

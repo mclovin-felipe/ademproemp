@@ -9,10 +9,11 @@ const Footer = () => {
         <div className="flex flex-col justify-between col-span-2 gap-y-5">
           <h1>Logo</h1>
           <h2>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
-            quaerat earum ex dolorum, ducimus iste sint odit reiciendis saepe
-            soluta amet, atque et, assumenda autem necessitatibus fugit quod id
-            eligendi?
+            Somos una organización dedicada a ofrecer cursos de alta calidad en
+            diversas áreas técnicas y terapéuticas. Nos enfocamos en brindar una
+            experiencia de aprendizaje accesible, efectiva y respaldada por
+            profesionales con amplia experiencia. Nuestro compromiso es ayudar a
+            que cada estudiante alcance sus metas profesionales.
           </h2>
           <Link href="/pages/contacto" className="w-full">
             <Button className=" h-14 px-4 w-full rounded-lg">

@@ -13,28 +13,28 @@ const Page = async () => {
         ¿Por qué elegirnos?
       </h1>
       <p className="w-4/6 lg:w-3/4 mx-auto text-center py-5">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-        placeat nihil a itaque minus quidem.
+        Somos una organización comprometida con tu éxito. Nos destacamos por
+        ofrecer.
       </p>
 
       <div className=" mx-auto w-5/6 scroll">
         <Carousel
           slides={[
             <Card
-              title="Feature-01"
-              subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias placeat nihil a itaque minus quidem."
+              title="Compromiso con la calidad"
+              subtitle="Nos dedicamos a ofrecer una formación de excelencia, guiados por profesionales calificados que garantizan un aprendizaje efectivo."
               image="/profesor.png"
               link="https://www.google.com"
             />,
             <Card
-              title="Feature-01"
-              subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias placeat nihil a itaque minus quidem."
+              title="	Atención personalizada"
+              subtitle="Cada estudiante es importante para nosotros. Ofrecemos un acompañamiento cercano y personalizado en cada etapa de su formación."
               image="/profesor.png"
               link="https://www.google.com"
             />,
             <Card
-              title="Feature-01"
-              subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias placeat nihil a itaque minus quidem."
+              title="Certificaciones reconocidas"
+              subtitle="Nuestra misión es que obtengas certificaciones que te abran puertas en el mundo laboral, respaldadas por las mejores instituciones."
               image="/profesor.png"
               link="https://www.google.com"
             />,
@@ -45,10 +45,12 @@ const Page = async () => {
         <div className="flex flex-col justify-center items-start gap-y-10">
           <h1 className="text-4xl font-bold">Nuestro compromiso</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam
-            consequuntur possimus consectetur, cupiditate ab numquam earum,
-            laudantium animi dolorum debitis inventore perspiciatis modi illo
-            dolor, iusto cum dolorem quos sed.
+            En nuestra organización, nos comprometemos a ofrecer siempre los
+            mejores cursos y programas educativos, diseñados para proporcionar
+            un aprendizaje efectivo y accesible para todos. Creemos firmemente
+            en la importancia de la educación de calidad como un medio para
+            mejorar las oportunidades laborales y personales de nuestros
+            estudiantes.
           </p>
           {/* <div className="grid grid-cols-2 gap-x-3">
           <!-- {
@@ -61,31 +63,17 @@ const Page = async () => {
           } -->
         </div> */}
           <div className="rounded-md flex flex-row gap-x-5 p-8 bg-[#F3F8FB]">
-            <div className="h-full w-1/5 rounded-md items-center justify-center">
-              <img
-                src="/profesor.png"
-                alt="imagen"
-                className="w-full h-full object-cover hidden lg:block"
-              />
-            </div>
-            <div className="h-full lg:w-4/5 flex flex-col gap-y-3">
-              <h6>
-                <strong className="text-primary">Mr. Berroeta</strong> fundador
-              </h6>
+            <div className="h-full lg:w-4/5 flex flex-col gap-y-3 items-center justify-center">
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore
-                officia sed iure nostrum laboriosam nam dolorem, libero
-                voluptatibus laborum dignissimos harum a quam magni veniam
-                accusamus repellendus, explicabo perspiciatis deleniti.
+                Desde nuestros inicios en 2018, hemos trabajado incansablemente
+                para asegurar que cada uno de nuestros estudiantes reciba la
+                atención, el apoyo y los conocimientos que necesitan para
+                triunfar. Nuestro enfoque se basa en la excelencia y en la
+                dedicación hacia nuestros alumnos, para que puedan alcanzar sus
+                metas.
               </p>
             </div>
           </div>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus
-            rerum obcaecati cum excepturi fuga quae vero. Perspiciatis atque
-            magni, corrupti libero nesciunt cumque aspernatur accusantium
-            reprehenderit dolore natus quaerat earum.
-          </p>
         </div>
         <div className=" h-96 lg:h-full w-full relative">
           <Image
