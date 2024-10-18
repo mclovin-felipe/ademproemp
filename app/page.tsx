@@ -14,6 +14,8 @@ import { FrequentQ } from "./pages/component";
 import Professores from "./pages/home/component/profesores";
 import NoNoticia from "./pages/home/component/noNoticia";
 import Noticias from "./pages/home/component/noticias";
+import NosotrosCards from "./pages/component/NosotrosCards";
+import Testimonies from "./pages/component/Testimonies";
 const Page = () => {
   return (
     <main>
@@ -23,28 +25,7 @@ const Page = () => {
         {/* FEATURES */}
 
         <div className="  mx-auto w-5/6 ">
-          <Carousel
-            slides={[
-              <Card
-                title="Compromiso con la calidad"
-                subtitle="Nos dedicamos a ofrecer una formación de excelencia, guiados por profesionales calificados que garantizan un aprendizaje efectivo."
-                image="/profesor.png"
-                link="https://www.google.com"
-              />,
-              <Card
-                title="	Atención personalizada"
-                subtitle="Cada estudiante es importante para nosotros. Ofrecemos un acompañamiento cercano y personalizado en cada etapa de su formación."
-                image="/profesor.png"
-                link="https://www.google.com"
-              />,
-              <Card
-                title="Certificaciones reconocidas"
-                subtitle="Nuestra misión es que obtengas certificaciones que te abran puertas en el mundo laboral, respaldadas por las mejores instituciones."
-                image="/profesor.png"
-                link="https://www.google.com"
-              />,
-            ]}
-          />
+          <NosotrosCards />
         </div>
         <div className="grid h-auto lg:grid-cols-2 w-5/6 mx-auto items-center gap-y-6 gap-x-10 py-5 min-h-[40rem]">
           <div className="h-full w-full relative">
@@ -121,33 +102,9 @@ const Page = () => {
           <Professores />
         </div>
         {/* TESTIMONIOS */}
-        <div className="grid lg:grid-cols-3 gap-x-3 w-5/6  mx-auto py-14 items-center">
-          <img
-            src="/profesor.png"
-            alt="profesor"
-            className="w-full h-[300px] hidden lg:flex mx-auto object-contain rounded-lg border-2"
-          />
-          <div className="p-4 gap-y-5 flex flex-col col-span-2">
-            <div className="flex flex-row justify-between w-full">
-              {/* <Badge text="Testimonios" /> */}
-            </div>
-            <h1 className="text-4xl font-bold">Testimonios</h1>
-            <div className={"flex flex-row gap-x-3"}>
-              <div className="w-14 h-14 object-contain rounded-full border-2"></div>
-              <div className="flex flex-col gap-y-1">
-                <p className="">Camila Reyes</p>
-                <p>Técnico en Electricidad</p>
-              </div>
-            </div>
-
-            <p className="italic">
-              Gracias a los cursos que compré aquí, logré obtener mi
-              certificación SEC en tiempo récord. La calidad del contenido es
-              excelente, y el apoyo de los instructores fue fundamental. Sin
-              duda, recomiendo este sitio para cualquiera que quiera mejorar sus
-              oportunidades laborales.
-            </p>
-          </div>
+        <div className="flex gap-y-5 items-center justify-center w-5/6 mx-auto flex-col my-5">
+          <h1 className="text-6xl font-bold text-center">Testimonios</h1>
+          <Testimonies />
         </div>
         <Noticias />
       </div>

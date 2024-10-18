@@ -37,7 +37,9 @@ const NavBar = () => {
           }
         )}
       >
-        <div className=" relative">logo</div>
+        <div className=" relative">
+          <img src="/logo.svg" alt="logo" className="w-14 h-14" />
+        </div>
 
         <Button
           className="lg:hidden"

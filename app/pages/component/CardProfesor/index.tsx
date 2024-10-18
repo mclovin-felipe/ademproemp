@@ -10,8 +10,8 @@ const CardProfesor = (props: User) => {
     return text;
   };
   return (
-    <div className="rounded-lg  lg:w-auto bg-card p-4 flex flex-col gap-y-3 max-w-[400px] ">
-      <img src={props.media} alt="Profesor" className="rounded-t-lg" />
+    <div className="rounded-lg  lg:w-auto bg-card p-4 flex flex-col gap-y-3 max-w-[400px] min-h-[27rem] ">
+      <img src={props.media} alt="Profesor" className="rounded-lg h-[300px]" />
       <div className="p-4 break-words">
         <p className="text-lg text-black font-bold">
           {props.firstName + " " + props.lastName}

@@ -2,6 +2,7 @@ import Carousel from "@/components/Carousel/EmblaCarousel";
 import { Card, Contacto, CardBlog, Header } from "../component";
 import Image from "next/image";
 import { getAllNews } from "@/app/dashboard/services/news";
+import NosotrosCards from "../component/NosotrosCards";
 
 const Page = async () => {
   const data = await getAllNews();
@@ -18,28 +19,7 @@ const Page = async () => {
       </p>
 
       <div className=" mx-auto w-5/6 scroll">
-        <Carousel
-          slides={[
-            <Card
-              title="Compromiso con la calidad"
-              subtitle="Nos dedicamos a ofrecer una formación de excelencia, guiados por profesionales calificados que garantizan un aprendizaje efectivo."
-              image="/profesor.png"
-              link="https://www.google.com"
-            />,
-            <Card
-              title="	Atención personalizada"
-              subtitle="Cada estudiante es importante para nosotros. Ofrecemos un acompañamiento cercano y personalizado en cada etapa de su formación."
-              image="/profesor.png"
-              link="https://www.google.com"
-            />,
-            <Card
-              title="Certificaciones reconocidas"
-              subtitle="Nuestra misión es que obtengas certificaciones que te abran puertas en el mundo laboral, respaldadas por las mejores instituciones."
-              image="/profesor.png"
-              link="https://www.google.com"
-            />,
-          ]}
-        />
+        <NosotrosCards />
       </div>
       <div className="grid lg:grid-cols-2 w-5/6  mx-auto my-16 gap-x-5">
         <div className="flex flex-col justify-center items-start gap-y-10">
@@ -77,7 +57,7 @@ const Page = async () => {
         </div>
         <div className=" h-96 lg:h-full w-full relative">
           <Image
-            src="/profesor.png"
+            src="/manos.jpg"
             alt="imagen"
             fill
             className="  object-contain"
@@ -87,7 +67,7 @@ const Page = async () => {
       <Contacto />
       <div className="w-full flex flex-col gap-y-3 items-center justify-center mt-14">
         {/* <Badge text="Nuestro blog" /> */}
-        <h1 className="text-4xl font-bold py-14">Nuestro blog</h1>
+        <h1 className="text-4xl font-bold py-14">Noticias</h1>
 
         <div className=" mx-auto w-5/6 scroll">
           <Carousel
