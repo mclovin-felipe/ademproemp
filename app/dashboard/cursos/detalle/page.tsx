@@ -16,9 +16,13 @@ import InputEdit from "./components/inputEdit";
 import useAxiosInstance from "@/lib/axios";
 import { useToast } from "@/components/ui/use-toast";
 import { Switch } from "@/components/ui/switch";
+import Loading from "../../loading";
+import { useRouter } from "next/navigation";
+import { ArrowLeft } from "lucide-react";
 
 const Page = () => {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const [curso, setCurso] = useState<CursosProps>({} as CursosProps);
   const [loading, setLoading] = useState<boolean>(true);
   const axios = useAxiosInstance();
@@ -108,83 +112,88 @@ const Page = () => {
       day: parseInt(date[2]),
     };
   };
-  if (loading) return <p>Cargando...</p>;
+  if (loading) return <Loading />;
 
   return (
-    <form className="bg-white h-full w-full py-14 flex flex-col gap-y-5 ">
-      <div className="flex flex-row items-center relative w-5/6 mx-auto bg-gray-100 rounded-xl p-5 drop-shadow-md">
-        <Image
-          src={curso.media}
-          className="object-contain rounded-full h-52 w-52 bg-gray-300"
-          alt="curso"
-          width={200}
-          height={200}
-        />
-        <h1 className="text-gray-900 text-4xl font-semibold ">
-          {watch("title")}
-        </h1>
-      </div>
-      <div className="w-5/6 mx-auto bg-gray-100 rounded-xl drop-shadow-md p-5 grid lg:grid-cols-2 gap-5">
-        <InputEdit label="Titulo">
-          <Input {...register("title")} />
-        </InputEdit>
-        <InputEdit label="Descripción">
-          <Textarea {...register("description")} />
-        </InputEdit>
-        <InputEdit label="Fecha de inicio">
-          <DatePicker
-            date={watch("startDate") as Date}
-            setDate={handleDate}
-            className={"rounded-md text-gray-900"}
+    <div className="bg-white pt-5">
+      <Button onClick={() => router.back()} className="w-1/12 mx-auto ml-5">
+        <ArrowLeft /> Volver
+      </Button>
+      <form className="bg-white h-full w-full py-14 flex flex-col gap-y-5 ">
+        <div className="flex flex-row items-center relative w-5/6 mx-auto bg-gray-100 rounded-xl p-5 drop-shadow-md">
+          <Image
+            src={curso.media}
+            className="object-contain rounded-full h-52 w-52 bg-gray-300"
+            alt="curso"
+            width={200}
+            height={200}
           />
-        </InputEdit>
-        <InputEdit label="Fecha de finalización">
-          <DatePicker
-            date={watch("endDate") as Date}
-            minDate={new Date(watch("startDate")).setDate(
-              new Date(watch("starDate")).getDate() + 1
-            )}
-            setDate={handleDate2}
-            className={"rounded-md text-gray-900"}
-          />
-        </InputEdit>
-        <InputEdit label="Precio">
-          <Input {...register("price")} />
-        </InputEdit>
-        <InputEdit label="Número de asistentes">
-          <Input {...register("classesNumber")} />
-        </InputEdit>
-        <InputEdit label="Estado del curso ">
-          <div className="flex items-center gap-x-2">
-            <Switch
-              checked={!watch("disabled")}
-              onCheckedChange={(e) => {
-                console.log(e);
-                setValue("disabled", !watch("disabled"));
-              }}
+          <h1 className="text-gray-900 text-4xl font-semibold ">
+            {watch("title")}
+          </h1>
+        </div>
+        <div className="w-5/6 mx-auto bg-gray-100 rounded-xl drop-shadow-md p-5 grid lg:grid-cols-2 gap-5">
+          <InputEdit label="Titulo">
+            <Input {...register("title")} />
+          </InputEdit>
+          <InputEdit label="Descripción">
+            <Textarea {...register("description")} />
+          </InputEdit>
+          <InputEdit label="Fecha de inicio">
+            <DatePicker
+              date={watch("startDate") as Date}
+              setDate={handleDate}
+              className={"rounded-md text-gray-900"}
             />
-            <p>{watch("disabled") ? "Inactivo" : "Activo"}</p>
-          </div>
-        </InputEdit>
+          </InputEdit>
+          <InputEdit label="Fecha de finalización">
+            <DatePicker
+              date={watch("endDate") as Date}
+              minDate={new Date(watch("startDate")).setDate(
+                new Date(watch("starDate")).getDate() + 1
+              )}
+              setDate={handleDate2}
+              className={"rounded-md text-gray-900"}
+            />
+          </InputEdit>
+          <InputEdit label="Precio">
+            <Input {...register("price")} />
+          </InputEdit>
+          <InputEdit label="Número de asistentes">
+            <Input {...register("classesNumber")} />
+          </InputEdit>
+          <InputEdit label="Estado del curso ">
+            <div className="flex items-center gap-x-2">
+              <Switch
+                checked={!watch("disabled")}
+                onCheckedChange={(e) => {
+                  console.log(e);
+                  setValue("disabled", !watch("disabled"));
+                }}
+              />
+              <p>{watch("disabled") ? "Inactivo" : "Activo"}</p>
+            </div>
+          </InputEdit>
 
-        {/* TODOL:PREGUNTARLE A VICENTE */}
+          {/* TODOL:PREGUNTARLE A VICENTE */}
 
-        {/* <InputEdit label="Hora de inicio">
+          {/* <InputEdit label="Hora de inicio">
           <TimePickerDemo date={watch("startTime")} setDate={handleTIme} />
         </InputEdit>
         <InputEdit label="Hora de finalización">
           <TimePickerDemo date={watch("endTime")} setDate={handleTIme2} />
         </InputEdit> */}
-        <div className="flex flex-row col-span-2 justify-end gap-x-3">
-          <Button variant={"outline"} className="text-gray-700">
-            Cancelar
-          </Button>
-          <Button type="button" onClick={handleSubmit(onSubmit)}>
-            Guardar
-          </Button>
+          <div className="flex flex-row col-span-2 justify-end gap-x-3">
+            <Button variant={"outline"} className="text-gray-700">
+              Cancelar
+            </Button>
+            <Button type="button" onClick={handleSubmit(onSubmit)}>
+              Guardar
+            </Button>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 };
 export default Page;

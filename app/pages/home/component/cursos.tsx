@@ -7,7 +7,7 @@ import Link from "next/link";
 const Cursos = () => {
   const { course, loading, error } = useCourse();
   if (error) return <ErrorCard />;
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div>Cargando cursos...</div>;
   if (course.length === 0)
     return <div className="text-3xl my-14">No hay cursos en este momento</div>;
   return (

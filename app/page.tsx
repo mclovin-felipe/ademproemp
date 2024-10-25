@@ -1,18 +1,13 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { Footer, NavBar } from "./pages/component";
 import Landing from "./pages/home/component/landing";
-import Carousel from "@/components/Carousel/EmblaCarousel";
-import { Card } from "./pages/component";
 import Image from "next/image";
-import { Nostros } from "./pages/component";
 import { ArrowRight } from "lucide-react";
 import Cursos from "./pages/home/component/cursos";
 import { Contacto } from "./pages/component";
 import { FrequentQ } from "./pages/component";
 import Professores from "./pages/home/component/profesores";
-import NoNoticia from "./pages/home/component/noNoticia";
 import Noticias from "./pages/home/component/noticias";
 import NosotrosCards from "./pages/component/NosotrosCards";
 import Testimonies from "./pages/component/Testimonies";

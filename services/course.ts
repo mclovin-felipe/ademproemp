@@ -27,7 +27,12 @@ export const addCourse = async (data: any, token: string): Promise<any> => {
   return response.data;
 };
 export const getAllCourses = async (): Promise<any> => {
-  const response = await api.get("/v1/course/findAll");
+  const response = await api.get("/v1/course/findAll", {
+    headers: {
+      // NO CACHE
+      "Cache-Control": "no-cache",
+    },
+  });
   return response.data;
 };
 export const getCourseById = async (id: number): Promise<any> => {

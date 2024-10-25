@@ -58,10 +58,6 @@ const SideBar = () => {
         <ButtonSide pathButton="noticias">
           <LayoutDashboard /> <span className="hidden lg:flex">Noticias</span>
         </ButtonSide>
-
-        <ButtonSide pathButton="configuracion">
-          <Settings /> <span className="hidden lg:flex">Configuración</span>
-        </ButtonSide>
       </div>
     </div>
   );
