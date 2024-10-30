@@ -31,6 +31,7 @@ const Page = () => {
         subject: "Mensaje de contacto",
         templateId: 1,
         firstName: data.name + " " + data.lastname,
+        number: data.number,
       });
       if (response.error) {
         throw response.error;
