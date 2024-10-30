@@ -118,6 +118,11 @@ const CardCurso = async (props: CursosProps) => {
                   ))}
                 </div>
               </div>
+              <ButtonInscribir
+                id={props.id}
+                title={props.title}
+                price={props.price}
+              />
             </div>
           </DialogDescription>
         </DialogHeader>
