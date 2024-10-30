@@ -28,7 +28,7 @@ const PayOrder = () => {
   );
   const getCourse = async () => {
     try {
-      const response = await getCourseById(1);
+      const response = await getCourseById(curso.id);
       console.log(response);
       setCourse(response.data);
     } catch (error) {
@@ -46,8 +46,8 @@ const PayOrder = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          userRut: "20063709-7",
-          courseId: 1,
+          userRut: user.rut,
+          courseId: course?.id,
         }),
       }
     );
